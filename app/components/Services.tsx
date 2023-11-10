@@ -81,7 +81,7 @@ const Services = () => {
             {/* Blue container */}
             <div className=' py-[3.5rem] px-[1rem] mb-[3.5rem] bg-gradient-to-tr from-[#1E40AF] to-[#2563EB] flex flex-col gap-[2rem]'>
                 <h3 className='h3 text-[#F3F4F6]'>CONTINUOUS SUPPORT</h3>
-                <p className='info-p text-[#DBEAFE]'>Our commitment doesn t stop at launch. We provide ongoing support to keep your digital presence ahead of the curve.</p>
+                <p className="info-p text-[#DBEAFE]">Our commitment doesn&apos;t stop at launch. We provide ongoing support to keep your digital presence ahead of the curve.</p>
             </div>
 
             {/* Services buttons */}
