@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.page {
+  @apply px-[1rem];
+}
+
+.h1 {
+  @apply text-[1.5rem] font-bold leading-[1.75rem];
+}
+
+.h2 {
+  @apply text-[3rem] font-bold leading-[3.125rem];
+}
+
+.h3 {
+  @apply text-[1.125rem] font-bold leading-[1.375rem];
+}
+
+.info-p {
+  @apply text-[1.125rem] leading-[1.75rem];
+}
+
+.values-p {
+  @apply text-[1rem] leading-[1.5rem]
+}
+
+.smaller-button {
+  @apply bg-gradient-to-tr from-[#1E40AF] to-[#2563EB] w-full h-[2.75rem] py-[0.5rem] rounded-lg z-10 text-[1.125rem] font-thin text-white ;
+}
+
+.smaller-button-behind {
+  @apply bg-black w-full h-[2.75rem] rounded-lg mt-[8px] absolute left-1 z-0 -translate-y-1;
+}
