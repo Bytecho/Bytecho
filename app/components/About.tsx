@@ -61,7 +61,7 @@ export default function About() {
             </div>
 
             <p className='text-[1.25rem] font-bold leading-[1.625rem] text-[#D1FAE5] '>
-                We're not just building websites; we're building success stories, one project at a time.
+                We re not just building websites; we re building success stories, one project at a time.
             </p>
         </main>
         
@@ -69,7 +69,7 @@ export default function About() {
         <div className='py-[3.5rem] px-[1rem] bg-gradient-to-r from-[#09D092] to-[#059669] flex flex-col gap-[2rem] '>
             <p className='text-[0.75rem] leading-[1rem] underline decorat decoration-[#F9FAFB]'>It all begins with a spark, a brilliant idea. </p>
             <h3 className='text-[1.125rem] leading-[1.25rem] font-bold text-[#F9FAFB]'>
-                WE'RE HERE TO HELP YOU <span className='text-[#022C22]'>TRANSFORM THAT SPARK</span> INTO A BLAZING DIGITAL PRESENCE. 
+                WE RE HERE TO HELP YOU <span className='text-[#022C22]'>TRANSFORM THAT SPARK</span> INTO A BLAZING DIGITAL PRESENCE. 
             </h3>
         </div>
     </div>
