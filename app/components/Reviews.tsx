@@ -71,9 +71,9 @@ const [currentReview, setCurrentReview] = useState(0);
 
       {/* Blue area */}
       <div className=' py-[3.5rem] px-[1rem] bg-gradient-to-tr from-[#1E40AF] to-[#2563EB] flex flex-col gap-[2rem]'>
-        <p className="info-p text-[#DBEAFE] text-center">Ready to craft your digital masterpiece? Let's get started!</p>
+        <p className="info-p text-[#DBEAFE] text-center">Ready to craft your digital masterpiece? Let&apos;s get started!</p>
         <button className='px-[2rem] py-[0.5rem] rounded-lg border border-[#9CA3AF] text-[#F3F4F6]'>
-          Let's work
+          Let&apos;s work
         </button>
       </div>
 
