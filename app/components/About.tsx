@@ -67,7 +67,7 @@ export default function About() {
         
         {/* Green area */}
         <div className='py-[3.5rem] px-[1rem] bg-gradient-to-r from-[#09D092] to-[#059669] flex flex-col gap-[2rem] '>
-            <p className='text-[0.75rem] leading-[1rem] underline decorat decoration-[#F9FAFB]'>It all begins with a spark, a brilliant idea. </p>
+            <p className='text-[1rem] leading-[1rem] underline decorat decoration-[#F9FAFB]'>It all begins with a spark, a brilliant idea. </p>
             <h3 className='text-[1.125rem] leading-[1.25rem] font-bold text-[#F9FAFB]'>
                 WE&apos;RE HERE TO HELP YOU <span className='text-[#022C22]'>TRANSFORM THAT SPARK</span> INTO A BLAZING DIGITAL PRESENCE. 
             </h3>
