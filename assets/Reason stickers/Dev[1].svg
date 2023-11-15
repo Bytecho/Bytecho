@@ -1,0 +1,13 @@
+<svg width="58" height="59" viewBox="0 0 58 59" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M49.0001 1.5H56.0001C56.5524 1.5 57.0001 1.94772 57.0001 2.5V8.5" stroke="#10B981" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M1.00012 9L1.00012 2C1.00012 1.44772 1.44784 1 2.00012 1L8.00012 1" stroke="#10B981" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M8.99988 57.5L1.99988 57.5C1.44759 57.5 0.999878 57.0523 0.999878 56.5L0.999879 50.5" stroke="#10B981" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M56.9999 49.5L56.9999 56.5C56.9999 57.0523 56.5522 57.5 55.9999 57.5L49.9999 57.5" stroke="#10B981" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M23.3221 49H35.3221C45.3221 49 49.3221 45 49.3221 35V23C49.3221 13 45.3221 9 35.3221 9H23.3221C13.3221 9 9.32214 13 9.32214 23V35C9.32214 45 13.3221 49 23.3221 49Z" stroke="#10B981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M36.4623 41.9992V34.1992" stroke="#10B981" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M36.4623 19.9V16" stroke="#10B981" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M36.4621 30.3004C39.334 30.3004 41.6621 27.9723 41.6621 25.1004C41.6621 22.2285 39.334 19.9004 36.4621 19.9004C33.5902 19.9004 31.2621 22.2285 31.2621 25.1004C31.2621 27.9723 33.5902 30.3004 36.4621 30.3004Z" fill="#1F2937" stroke="#F3F4F6" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M22.182 41.9996V38.0996" stroke="#10B981" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M22.182 23.8V16" stroke="#10B981" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M22.1823 38.0992C25.0542 38.0992 27.3823 35.7711 27.3823 32.8992C27.3823 30.0273 25.0542 27.6992 22.1823 27.6992C19.3104 27.6992 16.9823 30.0273 16.9823 32.8992C16.9823 35.7711 19.3104 38.0992 22.1823 38.0992Z" stroke="#10B981" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

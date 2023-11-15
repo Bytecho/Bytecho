@@ -8,6 +8,7 @@ import EyeIcon from '../../assets/eye-icon.svg';
 import RightArrow from '../../assets/right-arrow.svg';
 import ServicesButtons from './ServicesButtons';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Services = () => {
     
@@ -17,35 +18,40 @@ const Services = () => {
             title: 'Strategic Design',
             logo: StrategicIcon,
             logoDescription: "strategic design representative icon",
-            description: "Our designs go beyond aesthetics; they are strategic, reflecting your brand's essence and engaging your audience effectively."
+            description: "Our designs go beyond aesthetics; they are strategic, reflecting your brand's essence and engaging your audience effectively.",
+            url: 'design-service'
         },
         {
             id: 2,
             title: 'User-Centric Web Development',
             logo: UserCentricIcon,
             logoDescription: "strategic design representative icon",
-            description: "Our designs go beyond aesthetics; they are strategic, reflecting your brand's essence and engaging your audience effectively."
+            description: "Our designs go beyond aesthetics; they are strategic, reflecting your brand's essence and engaging your audience effectively.",
+            url: 'development-service'
         },
         {
             id: 3,
             title: 'Optimising for Search Engines',
             logo: SeoIcon,
             logoDescription: "SEO representative icon",
-            description: "We elevate your online visibility with Search Engine Optimization (SEO), making sure your website ranks where it matters."
+            description: "We elevate your online visibility with Search Engine Optimization (SEO), making sure your website ranks where it matters.",
+            url: 'seo-service'
         },
         {
             id: 4,
             title: 'Conversion Mastery',
             logo: ConversionIcon,
             logoDescription: "Statistics icon",
-            description: "Our strategies turn visitors into loyal customers, maximizing the potential of your online presence."
+            description: "Our strategies turn visitors into loyal customers, maximizing the potential of your online presence.",
+            url: 'conversion-service'
         },
         {
             id: 5,
             title: 'Social Media Excellence',
             logo: SocialMediaIcon,
             logoDescription: "Social media representative icon",
-            description: "We manage your social media and create captivating content that keeps your brand in the spotlight."
+            description: "We manage your social media and create captivating content that keeps your brand in the spotlight.",
+            url: 'social-media-service'
         },
     ]
     
@@ -68,11 +74,13 @@ const Services = () => {
                                 <Image src={service.logo} alt={service.logoDescription} title={service.logoDescription} className='z-10 w-[8.25rem] h-[7.64rem]' />
                             </div>
                             <p className='info-p text-textBrand'>{service.description}</p>
-                            <button className='flex gap-[0.5rem] items-center'>
-                                <Image src={EyeIcon} alt="Eye icon" title='Eye icon' />
-                                <span className='text-[0.875rem] text-white'>Read more</span>
-                                <Image src={RightArrow} alt="Right arrow icon" title='Right arrow icon' />
-                            </button>
+                            <Link href={`services/${service.url}`}>
+                                <button className='flex gap-[0.5rem] items-center'>
+                                    <Image src={EyeIcon} alt="Eye icon" title='Eye icon' />
+                                    <span className='text-[0.875rem] text-white'>Read more</span>
+                                    <Image src={RightArrow} alt="Right arrow icon" title='Right arrow icon' />
+                                </button>
+                            </Link>
                         </div>
                     ))}
                 </div>
