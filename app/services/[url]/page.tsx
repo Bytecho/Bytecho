@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { createClient } from 'contentful'
 import { Entry } from 'contentful';
 
@@ -8,9 +8,12 @@ import { Entry } from 'contentful';
 import NotFound from '../not-found'
 
 
-// Fetch all the services
-export async function fetchData() {
-    
+interface PageProps{
+    params: {url: string}
+}
+
+export default async function Services({ params }: PageProps ) {
+
     const client = createClient({
         space: 'ogj4tsqztns9',
         accessToken: 'zrPhNvg3sTKd_yiL7RHYugQMwaiFn6tegREpD7ra5RM',
@@ -18,45 +21,20 @@ export async function fetchData() {
 
     const res = await client.getEntries({ content_type: 'services' })
 
-    return {
-        props: {
-            services: res.items
-        }
+    const data = res.items
+
+    const currentService = data.find(entry => entry.fields.url === params.url);
+    console.log('este', currentService)
+
+    if (!currentService) {
+        // Handle case where the service is not found
+        return <NotFound />;
     }
-}
-
-// Function to get the url path
-interface PageProps{
-    params: {url: string}
-}
-
-export default function Services({ params }: PageProps ) {
-
-    // Declare the variable where all the services will be stored
-    const [fetchedServices, setFetchedServices] = useState<Entry<any>[]>([]);
-    
-    useEffect(() => {
-        const fetchServices = async () => {
-            const data = await fetchData();
-            setFetchedServices(data.props.services);
-        }
-
-        fetchServices()
-    }, []);
-
-    // Find the service according to the path requested
-    const service = fetchedServices.find(service => service.fields.url === params.url)
-    console.log(service)
 
   return (
     <div>
-        {service?.fields?.url === params.url && (
-            <p>{String(service?.fields?.title)}</p>
-        )}
-
-        {service?.fields?.url != params.url && (
-            <NotFound />
-        )}
+        {currentService?.fields.url as string}
+        {currentService?.fields.legend as string}
     </div>
   )
 }
