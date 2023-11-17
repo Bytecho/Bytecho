@@ -1,9 +1,10 @@
-"use client"
+// "use client"
 
 import React from 'react'
 import { createClient } from 'contentful'
 import { Entry } from 'contentful';
 import Image from 'next/image';
+import Link from 'next/link';
 
 // Components
 import NotFound from '../not-found'
@@ -13,6 +14,7 @@ import Form from './Form';
 
 // Assets
 import Vector from '../../../assets/Services-vector.svg'
+
 
 interface PageProps{
     params: {url: string}
@@ -51,10 +53,20 @@ export default async function Services({ params }: PageProps ) {
                 className='w-full h-full object-cover absolute'
             />
             <div className='flex flex-col gap-[2rem] text-center items-center'>
-                <h2 className='h3 text-textBrand '>{currentService?.fields?.legend as string}</h2>
-                <Image src={(currentService as any)?.fields?.sticker?.fields?.file.url} alt='hey' width={85} height={85} className='z-10 w-[15.255rem] h-[13.75rem]' />
                 <h1 className='text-light text-[1.125rem] leading-[1.25rem] font-bold'>{currentService?.fields?.title as string}</h1>
+                <Image src={(currentService as any)?.fields?.sticker?.fields?.file.url} alt='hey' width={85} height={85} className='z-10 w-[15.255rem] h-[13.75rem]' />
+                <h2 className='h3 text-blue-300 '>{currentService?.fields?.legend as string}</h2>
                 <p className='text-white text-[0.875rem] leading-[1.25rem]'>{currentService?.fields?.description as string}</p>
+                {/* Button */}
+                <Link
+                    href='/'
+                    className="relative inline-flex mx-auto w-full"
+                >
+                    <button className="bg-gradient-to-tr from-[#1E40AF] to-[#2563EB] w-full h-[2.75rem] py-[0.5rem] rounded-lg z-10 text-[1.125rem] text-white">
+                        Let's talk
+                    </button>
+                    <button className="smaller-button-behind"></button>
+                </Link>
             </div>
         </div>
 
@@ -64,9 +76,12 @@ export default async function Services({ params }: PageProps ) {
         </div>
         
         {/* Reasons */}
-        <div className='page mt-[2.5rem]'>
+        <div className='page'>
             <Reasons approachService={currentService} />
         </div>
+
+        {/* Closing */}
+        <h3></h3>
 
         {/* Blue container */}
         <div className=' py-[2rem] px-[1rem] bg-gradient-to-tr from-[#1E40AF] to-[#2563EB] flex flex-col gap-[2rem]'>

@@ -13,6 +13,7 @@ const config: Config = {
         secondary: '#E5E7EB',
         greenBrand: '#09D092',
         surfaceGreen: '#34D399',
+        surfaceBlue: '#93C5FD',
         textBrand: '#9CA3AF',
         light: '#F3F4F6'
       }
