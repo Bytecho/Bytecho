@@ -63,7 +63,7 @@ export default async function Services({ params }: PageProps ) {
                     className="relative inline-flex mx-auto w-full"
                 >
                     <button className="bg-gradient-to-tr from-[#1E40AF] to-[#2563EB] w-full h-[2.75rem] py-[0.5rem] rounded-lg z-10 text-[1.125rem] text-white">
-                        Let's talk
+                        Let&apos;s talk
                     </button>
                     <button className="smaller-button-behind"></button>
                 </Link>
