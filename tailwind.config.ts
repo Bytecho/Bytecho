@@ -10,9 +10,11 @@ const config: Config = {
     extend: {
       colors: {
         primary: '#1F2937',
+        secondary: '#E5E7EB',
         greenBrand: '#09D092',
         surfaceGreen: '#34D399',
         textBrand: '#9CA3AF',
+        light: '#F3F4F6'
       }
     },
   },
