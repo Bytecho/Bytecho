@@ -10,7 +10,7 @@ import Headphones from '../../../assets/approach-stickers/Head.svg'
 export default function Approach(currentService:any) {
     return (
     <div className=''>
-        <h2 className='h3 text-white'>Our Approach</h2>
+        <h2 className='h3 text-white text-center'>Our Approach</h2>
         <div className='py-[2rem] flex flex-col gap-[2rem]'>
             {/* First approach box */}
             <div className='p-[1rem] border border-light rounded flex flex-col gap-[0.5rem]'>
