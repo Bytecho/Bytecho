@@ -20,18 +20,40 @@ interface PageProps{
     params: {url: string}
 }
 
-export default async function Services({ params }: PageProps ) {
-    // Call Contentful API
-    const client = createClient({
-        space: 'ogj4tsqztns9',
-        accessToken: 'zrPhNvg3sTKd_yiL7RHYugQMwaiFn6tegREpD7ra5RM',
-    })
+// Create client for contentful
+const client = createClient({
+    space: 'ogj4tsqztns9',
+    accessToken: 'zrPhNvg3sTKd_yiL7RHYugQMwaiFn6tegREpD7ra5RM',
+})
 
+async function fetchData() {
     // Fetch the data
     const res = await client.getEntries({ content_type: 'services' })
 
     // Store the data in a variable
     const data = res.items
+
+    return data
+}
+
+
+
+export default async function Services({ params }: PageProps ) {
+    const data = await fetchData()
+    console.log(data)
+    
+    
+    // // Call Contentful API
+    // const client = createClient({
+    //     space: 'ogj4tsqztns9',
+    //     accessToken: 'zrPhNvg3sTKd_yiL7RHYugQMwaiFn6tegREpD7ra5RM',
+    // })
+
+    // // Fetch the data
+    // const res = await client.getEntries({ content_type: 'services' })
+
+    // // Store the data in a variable
+    // const data = res.items
 
     // Find the service required by the user
     const currentService = data.find(entry => entry.fields.url === params.url);
@@ -81,7 +103,11 @@ export default async function Services({ params }: PageProps ) {
         </div>
 
         {/* Closing */}
-        <h3></h3>
+        <div className='page mb-[2rem]'>
+            <h3 className='text-[#10B981] text-[1.125rem] leading-[1.25rem] font-bold text-center'>
+                {currentService?.fields?.closingTitle as string}
+            </h3>
+        </div>
 
         {/* Blue container */}
         <div className=' py-[2rem] px-[1rem] bg-gradient-to-tr from-[#1E40AF] to-[#2563EB] flex flex-col gap-[2rem]'>
