@@ -1,11 +1,12 @@
 "use client"
 
 import React, { useState } from 'react'
+import Link from 'next/link';
 
 // assets
 import Logo from '../../assets/logo.png'
 import Image from 'next/image';
-import Link from 'next/link';
+
 
 export default function Header() {
   const [mobileMenu, setMobileMenu] = useState(false);
@@ -32,17 +33,19 @@ export default function Header() {
   
   return (
     <nav className='bg-primary'>
-      <div className='py-[1rem] px-[1rem] flex justify-between items-center '>
-        <Image
-          src={Logo}
-          alt='Bytecho logo'
-          title="Company's logo"
-          width={74.31}
-          height={24}
-          quality={100}
-          placeholder='blur'
-          loading='eager'
-        />
+      <div className='py-[1rem] page flex justify-between items-center '>
+        <Link href="/">
+          <Image
+            src={Logo}
+            alt='Bytecho logo'
+            title="Company's logo"
+            width={74.31}
+            height={24}
+            quality={100}
+            placeholder='blur'
+            loading='eager'
+          />
+        </Link>
         <button 
           id='hamburguer-button' 
           className='md:hidden cursor-pointer relative' 

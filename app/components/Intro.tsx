@@ -6,7 +6,7 @@ export default function Intro() {
     <div className='page'>
         <div className=" pt-[1.25rem] flex flex-col gap-[0.5rem]">
             <h1 className="text-[#F3F4F6] h3">We specialise in <span className="text-greenBrand">Branding, Custom Web Design and Development.</span></h1>
-            <p className="text-blue-200 paragraph">Whether you&apos;re starting from scratch or looking to elevate your existing brand, we&apos;ve got the creative edge and the tech-savvy to make it happen.</p>
+            <p className="text-blue-200 text-[0.875rem] leading-[1.25rem]">Whether you&apos;re starting from scratch or looking to elevate your existing brand, we&apos;ve got the creative edge and the tech-savvy to make it happen.</p>
         </div>
         <div className='py-[3.5rem] flex flex-col gap-[2rem]'>
             <h2 className='h2 text-[#729BF5]'>
