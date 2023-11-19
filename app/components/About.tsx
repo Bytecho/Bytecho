@@ -40,8 +40,8 @@ export default function About() {
     return (
     <div className='pb-[3.5rem]'>
         <main className='page pb-[3.5rem]'>
-            <h2 className='h1 text-[#E5E7EB]'>WHO WE ARE</h2>
-            <div className="py-[2rem] flex flex-col gap-[2rem]">
+            <h2 className='h1 text-white'>WHO WE ARE</h2>
+            <div className="py-[2rem] sm:py-[2.5rem] flex flex-col gap-[2rem]">
                 {/* Values array */}
                 {values.map((value) => (
                     <div key={value.id} className='flex flex-col gap-[1rem]'>
@@ -66,9 +66,9 @@ export default function About() {
         </main>
         
         {/* Green area */}
-        <div className='py-[3.5rem] px-[1rem] bg-gradient-to-r from-[#09D092] to-[#059669] flex flex-col gap-[2rem] '>
-            <p className='text-[1rem] leading-[1rem] underline decorat decoration-[#F9FAFB]'>It all begins with a spark, a brilliant idea. </p>
-            <h3 className='text-[1.125rem] leading-[1.25rem] font-bold text-[#F9FAFB]'>
+        <div className='py-[3.5rem] page bg-gradient-to-r from-[#09D092] to-[#059669] flex flex-col gap-[2rem] '>
+            <p className='text-[1rem] leading-[1rem] underline decorat decoration-black'>It all begins with a spark, a brilliant idea. </p>
+            <h3 className='text-[1.125rem] leading-[1.25rem] sm:w-2/3 font-bold text-[#F9FAFB]'>
                 WE&apos;RE HERE TO HELP YOU <span className='text-[#022C22]'>TRANSFORM THAT SPARK</span> INTO A BLAZING DIGITAL PRESENCE. 
             </h3>
         </div>

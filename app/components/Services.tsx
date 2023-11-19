@@ -1,3 +1,7 @@
+import Image from 'next/image';
+import Link from 'next/link';
+
+// Assets
 import StrategicIcon from '../../assets/strategic-icon.svg';
 import UserCentricIcon from '../../assets/user-centric-icon.svg';
 import SeoIcon from '../../assets/seo-icon.svg';
@@ -7,8 +11,7 @@ import Vector from '../../assets/vector.svg';
 import EyeIcon from '../../assets/eye-icon.svg';
 import RightArrow from '../../assets/right-arrow.svg';
 import ServicesButtons from './ServicesButtons';
-import Image from 'next/image';
-import Link from 'next/link';
+import GridBg from '../../assets/gridBg.svg'
 
 const Services = () => {
     
@@ -56,10 +59,11 @@ const Services = () => {
     ]
     
     return ( 
-        <div className="py-[3.5rem] font-sans">
-            <div className=" pb-[3.5rem] px-[1rem]">
-                {/* <h1 className="text-white h1 text-center">OUR SERVICES</h1> */}
-                <div className='flex flex-col gap-[1rem]'>
+        <div className="py-[3.5rem] font-sans" >
+            <div className=" relative ">
+                <Image src={GridBg} className='absolute w-full h-full object-cover' alt='vector background' title='vector background'  />
+    
+                <div className='flex flex-col gap-[1rem] sm:gap-[2.5rem] px-[1rem] sm:px-[9rem] text-center'>
                     {/* Services container */}
                     {services.map(service => (
                         <div key={service.id} className='flex flex-col gap-[1rem]'>
@@ -73,8 +77,8 @@ const Services = () => {
                                 />
                                 <Image src={service.logo} alt={service.logoDescription} title={service.logoDescription} className='z-10 w-[8.25rem] h-[7.64rem]' />
                             </div>
-                            <p className='info-p text-textBrand'>{service.description}</p>
-                            <Link href={`services/${service.url}`}>
+                            <p className='info-p text-white'>{service.description}</p>
+                            <Link href={`services/${service.url}`} className='flex justify-center'>
                                 <button className='flex gap-[0.5rem] items-center'>
                                     <Image src={EyeIcon} alt="Eye icon" title='Eye icon' />
                                     <span className='text-[0.875rem] text-white'>Read more</span>
@@ -87,7 +91,7 @@ const Services = () => {
             </div>
 
             {/* Blue container */}
-            <div className=' py-[3.5rem] px-[1rem] mb-[3.5rem] bg-gradient-to-tr from-[#1E40AF] to-[#2563EB] flex flex-col gap-[2rem]'>
+            <div className='mt-[3.5rem] py-[3.5rem] page mb-[3.5rem] bg-gradient-to-tr from-[#1E40AF] to-[#2563EB] flex flex-col gap-[2rem]'>
                 <h3 className='h3 text-[#F3F4F6]'>CONTINUOUS SUPPORT</h3>
                 <p className="info-p text-[#DBEAFE]">Our commitment doesn&apos;t stop at launch. We provide ongoing support to keep your digital presence ahead of the curve.</p>
             </div>

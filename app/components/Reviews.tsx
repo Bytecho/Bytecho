@@ -37,7 +37,7 @@ const [currentReview, setCurrentReview] = useState(0);
   return (
     <div className='pb-[3.5rem] flex flex-col gap-[3.5rem]'>
       <main className='page'>
-        <h2 className='text-[1.25rem] text-[#DBEAFE] font-bold'>WHAT THEY SAID</h2>
+        <h2 className='text-[1.25rem] text-[#DBEAFE] font-bold text-center'>WHAT THEY SAID</h2>
         
         {/* Testimonials carousel */}
         <div className="mt-[2rem] flex items-start gap-2">
@@ -70,7 +70,7 @@ const [currentReview, setCurrentReview] = useState(0);
       </main>
 
       {/* Blue area */}
-      <div className=' py-[3.5rem] px-[1rem] bg-gradient-to-tr from-[#1E40AF] to-[#2563EB] flex flex-col gap-[2rem]'>
+      <div className=' py-[3.5rem] page bg-gradient-to-tr from-[#1E40AF] to-[#2563EB] flex flex-col gap-[2rem]'>
         <p className="info-p text-[#DBEAFE] text-center">Ready to craft your digital masterpiece? Let&apos;s get started!</p>
         <button className='px-[2rem] py-[0.5rem] rounded-lg border border-[#9CA3AF] text-[#F3F4F6]'>
           Let&apos;s work

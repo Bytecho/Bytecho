@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .page {
-  @apply px-[1rem];
+  @apply px-[1rem] sm:px-[3rem];
 }
 
 .h1 {
@@ -27,7 +27,7 @@
 }
 
 .smaller-button {
-  @apply bg-gradient-to-tr from-[#1E40AF] to-[#2563EB] w-full h-[2.75rem] py-[0.5rem] rounded-lg z-10 text-[1.125rem] font-thin text-white ;
+  @apply bg-gradient-to-tr from-[#1E40AF] to-[#2563EB] w-full h-[2.75rem] py-[0.5rem] rounded-lg z-10 text-[1.125rem] text-white ;
 }
 
 .smaller-button-behind {

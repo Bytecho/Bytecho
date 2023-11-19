@@ -35,7 +35,8 @@ const ServicesButtons = () => {
     
     return ( 
         <div className='page'>
-            <div className='flex flex-col gap-[0.5rem]'>
+            <h2 className='h1 text-white'>OUR SERVICES</h2>
+            <div className='mt-[2rem] sm:mt-[2.5rem] flex flex-col gap-[0.5rem]'>
                 {buttons.map((button) => (
                     <button key={button.id} className='px-[1rem] py-[0.5rem] flex items-center justify-between rounded-lg border border-gray-500 shadow-2xl '>
                         <div className='flex items-center gap-[1.5rem]'>
