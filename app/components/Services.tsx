@@ -79,7 +79,7 @@ const Services = () => {
                             </div>
                             <p className='info-p text-white'>{service.description}</p>
                             <Link href={`services/${service.url}`} className='flex justify-center'>
-                                <button className='flex gap-[0.5rem] items-center'>
+                                <button className='flex gap-[0.5rem] items-center z-20'>
                                     <Image src={EyeIcon} alt="Eye icon" title='Eye icon' />
                                     <span className='text-[0.875rem] text-white'>Read more</span>
                                     <Image src={RightArrow} alt="Right arrow icon" title='Right arrow icon' />
