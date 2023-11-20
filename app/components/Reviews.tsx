@@ -2,37 +2,45 @@
 
 import React from 'react'
 import { useState, useEffect } from 'react';
+import { createClient } from 'contentful'
 
+
+// Assetss
 import openQuotes from '../../assets/open-quotes.svg';
 import Image from 'next/image';
 
+// Components
+import ReviewDetails from './ReviewDetails';
+
+// Create client for contentful
+const client = createClient({
+    space: 'ogj4tsqztns9',
+    accessToken: 'zrPhNvg3sTKd_yiL7RHYugQMwaiFn6tegREpD7ra5RM',
+})
+
 
 export default function Reviews() {
-  const testimonials = [
-    {
-        id: 1,
-        quote: "Our designs go beyond aesthetics; they are strategic, reflecting your brand's essence and engaging your audience effectively.",
-        name: 'James Montilla',
-        company: 'AFRE Cleaning',
-        link: 'https://www.afrecleaning.com.au/'
-    },
-    {
-        id: 2,
-        quote: 'lorem ipsum sjajfbnfe dfndjbfhew fwenfweufnewunfewjd',
-        name: 'Michael Bennett',
-        company: 'Bennett Cleaning Services',
-        link: 'https://www.bennettcleaningservices.com.au/'
-    },
-    {
-        id: 3,
-        quote: 'lorem ipsum sjajfbnfe dfndjbfhew fwenfweufnewunfewjd',
-        name: 'Andrea Diaz',
-        company: 'The Ever Cake',
-        link: 'https://dev.db61t1u90mry8.amplifyapp.com/'
-    }
-]
 
-const [currentReview, setCurrentReview] = useState(0);
+  const [data, setData] = useState<any>()
+    
+    // fetch data from contentful and asign it do data
+    useEffect(() => {
+      async function fetchData() {
+        try {
+          const res:any = await client.getEntries({ content_type: 'reviews' })
+          setData(res.items)
+        } catch(error) {
+          console.error(error)
+        }
+  
+      }
+
+      fetchData()
+    }, [])
+
+  let [currentReview, setCurrentReview] = useState(0);
+
+  const [isChangingReview, setIsChangingReview] = useState(false);
   
   return (
     <div className='pb-[3.5rem] flex flex-col gap-[3.5rem]'>
@@ -40,32 +48,49 @@ const [currentReview, setCurrentReview] = useState(0);
         <h2 className='text-[1.25rem] text-[#DBEAFE] font-bold text-center'>WHAT THEY SAID</h2>
         
         {/* Testimonials carousel */}
-        <div className="mt-[2rem] flex items-start gap-2">
-          <Image 
-            src={openQuotes} 
-            alt="open quotes" 
-            title="Open quote illustration"
-            quality={100}
-            
-          />
-          <div className="flex flex-col gap-[1.5rem] transition-opacity duration-500">
-            <p className="text-textBrand text-[1.125rem] font-bold leading-[1.375rem]">
-              {testimonials[currentReview].quote}
-            </p>
-            {/* Client's information */}
-            <div className="flex flex-col">
-              <h3 className="text-[#F3F4F6] text-[1rem] font-bold ">
-                {testimonials[currentReview].company}
-              </h3>
-              <p className="text-[0.875rem] text-[#F3F4F6]">
-                {testimonials[currentReview].name}
-              </p>
-              <a href={testimonials[currentReview].link} target='_blank' className="text-[0.875rem] text-[#F3F4F6]">
-                {testimonials[currentReview].link}
-              </a>
-            </div>
-            
+        <div className={`mt-[2rem] grid grid-cols-6 gap-2 ${isChangingReview ? 'transition-opacity duration-500' : ''}`}>
+          <svg 
+            onClick={() => {
+              if(currentReview >0) {
+                setCurrentReview(currentReview - 1)
+              } else {
+                setCurrentReview(data.length - 1)
+              }
+            }}
+            className="w-[3rem] text-[#DBEAFE] self-center"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  strokeWidth="2"  strokeLinecap="round"  strokeLinejoin="round">
+              <polyline points="15 18 9 12 15 6" />
+          </svg>
+
+          <div className='col-span-4 flex items-start gap-2'>
+            <Image 
+              src={openQuotes} 
+              alt="open quotes" 
+              title="Open quote illustration"
+              quality={100}
+            />
+
+            {/* Reviews content */}
+            {data ? (
+              <ReviewDetails data={data} currentReview={currentReview} />
+            ): (
+              <h3 className='text-textBrand text-[1.125rem] font-bold leading-[1.375rem]'>Loading... Hopefully not for too long :)</h3>
+            )}
+
           </div>
+          
+          <svg 
+            onClick={() => {
+              if(currentReview < data.length -1) {
+                setCurrentReview(currentReview + 1)
+              } else {
+                setCurrentReview(0)
+              }
+            }} 
+            className="w-[3rem] text-[#DBEAFE] self-center"
+            viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  strokeWidth="2"  strokeLinecap="round"  strokeLinejoin="round">
+              <polyline points="9 18 15 12 9 6" />
+          </svg>
+
         </div>
       </main>
 
