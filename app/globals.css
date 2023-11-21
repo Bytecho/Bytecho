@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .page {
-  @apply px-[1rem] sm:px-[3rem];
+  @apply px-[1rem] sm:px-[3rem] md:px-[4rem];
 }
 
 .h1 {
@@ -15,7 +15,7 @@
 }
 
 .h3 {
-  @apply text-[1.125rem] font-bold leading-[1.375rem];
+  @apply text-[1.125rem] md:text-[1.5rem] font-bold leading-[1.375rem] md:leading-[1.75rem];
 }
 
 .info-p {

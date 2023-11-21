@@ -36,6 +36,7 @@ export default function Header() {
       <div className='py-[1rem] page flex justify-between items-center '>
         <Link href="/">
           <Image
+            className='md:w-[4.64rem]'
             src={Logo}
             alt='Bytecho logo'
             title="Company's logo"
