@@ -36,24 +36,8 @@ async function fetchData() {
     return data
 }
 
-
-
 export default async function Services({ params }: PageProps ) {
     const data = await fetchData()
-    console.log(data)
-    
-    
-    // // Call Contentful API
-    // const client = createClient({
-    //     space: 'ogj4tsqztns9',
-    //     accessToken: 'zrPhNvg3sTKd_yiL7RHYugQMwaiFn6tegREpD7ra5RM',
-    // })
-
-    // // Fetch the data
-    // const res = await client.getEntries({ content_type: 'services' })
-
-    // // Store the data in a variable
-    // const data = res.items
 
     // Find the service required by the user
     const currentService = data.find(entry => entry.fields.url === params.url);
@@ -74,9 +58,16 @@ export default async function Services({ params }: PageProps ) {
                 title='Vector background'  
                 className='w-full h-full object-cover absolute'
             />
-            <div className='flex flex-col gap-[2rem] text-center items-center'>
-                <h1 className='text-light text-[1.125rem] leading-[1.25rem] font-bold'>{currentService?.fields?.title as string}</h1>
-                <Image src={(currentService as any)?.fields?.sticker?.fields?.file.url} alt='hey' width={85} height={85} className='z-10 w-[15.255rem] h-[13.75rem]' />
+            <div className='flex flex-col gap-[2rem] sm:gap-[2.5rem] text-center items-center'>
+                <h1 className='text-light text-[1.125rem] leading-[1.25rem] font-bold'>
+                    {currentService?.fields?.title as string}
+                </h1>
+                <Image 
+                    src={(currentService as any)?.fields?.sticker?.fields?.file.url} 
+                    alt='hey' 
+                    width={85} height={85} 
+                    className='z-10 w-[15.255rem] h-[13.75rem]' 
+                />
                 <h2 className='h3 text-blue-300 '>{currentService?.fields?.legend as string}</h2>
                 <p className='text-white text-[0.875rem] leading-[1.25rem]'>{currentService?.fields?.description as string}</p>
                 {/* Button */}
@@ -104,13 +95,13 @@ export default async function Services({ params }: PageProps ) {
 
         {/* Closing */}
         <div className='page mb-[2rem]'>
-            <h3 className='text-[#10B981] text-[1.125rem] leading-[1.25rem] font-bold text-center'>
+            <h3 className='text-[#10B981] text-[1.125rem] leading-[1.25rem] font-bold text-center w-2/3 mx-auto'>
                 {currentService?.fields?.closingTitle as string}
             </h3>
         </div>
 
         {/* Blue container */}
-        <div className=' py-[2rem] px-[1rem] bg-gradient-to-tr from-[#1E40AF] to-[#2563EB] flex flex-col gap-[2rem]'>
+        <div className=' py-[2rem] page bg-gradient-to-tr from-[#1E40AF] to-[#2563EB] flex flex-col gap-[2rem]'>
             <h3 className='h3 text-[#F3F4F6]'>CONTINUOUS SUPPORT</h3>
             <p className="info-p text-[#DBEAFE]">Our commitment doesn&apos;t stop at launch. We provide ongoing support to keep your digital presence ahead of the curve.</p>
         </div>

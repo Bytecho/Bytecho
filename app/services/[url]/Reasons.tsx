@@ -19,7 +19,7 @@ export default function Reasons(currentService:any) {
                             src={reason?.data?.target?.fields?.file?.url}
                             alt='Bulb sticker'
                             title='Bulb sticker'
-                            className='pt-[2rem] w-[3.5rem] h-auto'
+                            className='pt-[2rem] sm:pt-[2.5rem] w-[3.5rem] h-auto'
                         />
                     )
                 }
@@ -30,7 +30,9 @@ export default function Reasons(currentService:any) {
                 }
                 if(reason.nodeType.startsWith("para")) {
                     return(
-                        <h3 key={index} className='pt-[0.56rem] text-[1rem] text-light '>{reason?.content[0]?.value}</h3>
+                        <p key={index} className='pt-[0.56rem] text-[1rem] text-light w-2/3 '>
+                            {reason?.content[0]?.value}
+                        </p>
                     )
                 }
             })}

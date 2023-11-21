@@ -39,8 +39,6 @@ export default function Reviews() {
     }, [])
 
   let [currentReview, setCurrentReview] = useState(0);
-
-  const [isChangingReview, setIsChangingReview] = useState(false);
   
   return (
     <div className='pb-[3.5rem] flex flex-col gap-[3.5rem]'>
@@ -48,7 +46,7 @@ export default function Reviews() {
         <h2 className='text-[1.25rem] text-[#DBEAFE] font-bold text-center'>WHAT THEY SAID</h2>
         
         {/* Testimonials carousel */}
-        <div className={`mt-[2rem] grid grid-cols-6 gap-2 ${isChangingReview ? 'transition-opacity duration-500' : ''}`}>
+        <div className="min-h-[354px] grid grid-cols-6 items-center gap-2">
           <svg 
             onClick={() => {
               if(currentReview >0) {

@@ -39,28 +39,39 @@ export default function About() {
   
     return (
     <div className='pb-[3.5rem]'>
-        <main className='page pb-[3.5rem]'>
-            <h2 className='h1 text-white'>WHO WE ARE</h2>
-            <div className="py-[2rem] sm:py-[2.5rem] flex flex-col gap-[2rem]">
-                {/* Values array */}
-                {values.map((value) => (
-                    <div key={value.id} className='flex flex-col gap-[1rem]'>
-                        <h3 className='h3 text-[#9CA3AF]'>{value.title}</h3>
-                        <p className='values-p text-[#E5E7EB]'>{value.text}</p>
-                    </div>
-                ))}
+        <main className='page pb-[3.5rem] md:pb-[4rem]'>
+            <div className=" flex flex-col gap-[2rem]">
+                {/* Values container */}
+                <div className='flex flex-col gap-[2rem]'>
+                    <h2 className='h1 text-white'>WHO WE ARE</h2>
+                        {/* Values array */}
+                        <div className='flex flex-col gap-[2rem] md:grid grid-cols-2'>
+                            {values.map((value) => (
+                                <div key={value.id} className='flex flex-col gap-[1rem]'>
+                                    <h3 className='h3 text-[#9CA3AF]'>{value.title}</h3>
+                                    <p className='values-p text-[#E5E7EB]'>{value.text}</p>
+                                </div>
+                            ))}
+                        </div>
+                </div>
 
-                {/* Reasons array */}
-                <h2 className='h1 text-[#E5E7EB]'>Why Bytecho?</h2>
-                {reasons.map((reason) => (
-                    <div key={reason.id} className='flex flex-col gap-[1rem]'>
-                        <h3 className='h3 text-[#9CA3AF]'>{reason.title}</h3>
-                        <p className='values-p text-[#E5E7EB]'>{reason.text}</p>
+                {/* Reasons container */}
+                <div className='flex flex-col gap-[2rem]'>
+                    <h2 className='h1 text-[#E5E7EB]'>Why Bytecho?</h2>
+                    {/* Reasons array */}
+                    <div className='flex flex-col gap-[2rem] md:grid grid-cols-2'>
+                        {reasons.map((reason) => (
+                            <div key={reason.id} className='flex flex-col gap-[1rem]'>
+                                <h3 className='h3 text-[#9CA3AF]'>{reason.title}</h3>
+                                <p className='values-p text-[#E5E7EB]'>{reason.text}</p>
+                            </div>
+                        ))}
+
                     </div>
-                ))}
+                </div>
             </div>
 
-            <p className='text-[1.25rem] font-bold leading-[1.625rem] text-[#D1FAE5] '>
+            <p className='mt-[2rem] sm:mt-[2.5rem] md:mt-[3.5rem] text-[1.25rem] md:text-[1.5rem] font-bold leading-[1.625rem] md:leading-[1.75rem] text-[#D1FAE5] md:text-center '>
                 We&apos;re not just building websites; we&apos;re building success stories, one project at a time.
             </p>
         </main>

@@ -59,32 +59,36 @@ const Services = () => {
     ]
     
     return ( 
-        <div className="py-[3.5rem] font-sans" >
+        <div className="py-[3.5rem] md:py-[4rem] font-sans" >
             <div className=" relative ">
                 <Image src={GridBg} className='absolute w-full h-full object-cover' alt='vector background' title='vector background'  />
     
-                <div className='flex flex-col gap-[1rem] sm:gap-[2.5rem] px-[1rem] sm:px-[9rem] text-center'>
+                <div className='flex flex-col gap-[1rem] sm:gap-[2.5rem] md:gap-[4.5rem] px-[1rem] sm:px-[9rem] md:px-[4rem] text-center'>
                     {/* Services container */}
-                    {services.map(service => (
-                        <div key={service.id} className='flex flex-col gap-[1rem]'>
-                            <h2 className=' text-greenBrand h3'>{service.title}:</h2>
-                            <div className='bg-surfaceGreen/80 p-10  relative rounded-lg w-ful h-[16rem] flex items-center justify-center'>
+                    {services.map((service, index) => (
+                        <div key={service.id} className={`flex flex-col md:flex-row gap-[1rem] md:gap-[2rem] ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
+                            <h2 className=' text-greenBrand h3 md:hidden'>{service.title}:</h2>
+                            <div className='bg-surfaceGreen/80 p-10 relative rounded-lg w-full h-[16rem] flex items-center justify-center'>
                                 <Image 
                                     src={Vector} 
                                     alt="Vector background"
                                     title='Vector background'  
-                                    className='w-full absolute'
+                                    className='w-full md:h-full absolute md:object-fill'
                                 />
                                 <Image src={service.logo} alt={service.logoDescription} title={service.logoDescription} className='z-10 w-[8.25rem] h-[7.64rem]' />
                             </div>
-                            <p className='info-p text-white'>{service.description}</p>
-                            <Link href={`services/${service.url}`} className='flex justify-center'>
-                                <button className='flex gap-[0.5rem] items-center z-20'>
-                                    <Image src={EyeIcon} alt="Eye icon" title='Eye icon' />
-                                    <span className='text-[0.875rem] text-white'>Read more</span>
-                                    <Image src={RightArrow} alt="Right arrow icon" title='Right arrow icon' />
-                                </button>
-                            </Link>
+                            <div className='flex flex-col md:justify-center gap-[1rem] md:text-left'>
+                                <h2 className=' text-greenBrand h3 hidden md:inline '>{service.title}:</h2>
+                                <p className='info-p text-white'>{service.description}</p>
+                                <Link href={`services/${service.url}`} className='flex justify-center md:justify-start'>
+                                    <button className='flex gap-[0.5rem] items-center z-20'>
+                                        <Image src={EyeIcon} alt="Eye icon" title='Eye icon' />
+                                        <span className='text-[0.875rem] text-white'>Read more</span>
+                                        <Image src={RightArrow} alt="Right arrow icon" title='Right arrow icon' />
+                                    </button>
+                                </Link>
+
+                            </div>
                         </div>
                     ))}
                 </div>
