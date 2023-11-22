@@ -7,11 +7,17 @@ import Services from "./components/Services";
 export default function Home() {
   return (
     <div className=" bg-primary ">
-            <Animation />
-            <Intro />
-            <Services />
-            <About />
-            <Reviews />
+      <div className="lg:flex">
+        <div className="lg:w-2/5 ">
+          <Animation />
         </div>
+        <div className="lg:w-3/5">
+          <Intro />
+        </div>
+      </div>
+      <Services />
+      <About />
+      <Reviews />
+    </div>
   )
 }
