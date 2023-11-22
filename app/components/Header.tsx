@@ -33,10 +33,10 @@ export default function Header() {
   
   return (
     <nav className='bg-primary'>
-      <div className='py-[1rem] page flex justify-between items-center '>
+      <div className='py-[1rem] lg:py-[2rem] page flex justify-between items-center '>
         <Link href="/">
           <Image
-            className='md:w-[4.64rem]'
+            className='md:w-[4.64rem] lg:w-[7rem] md:h-[1.5rem] lg:h-auto'
             src={Logo}
             alt='Bytecho logo'
             title="Company's logo"
@@ -55,21 +55,35 @@ export default function Header() {
           }}
         >
           <svg className="h-[1rem] w-[1.33rem] text-[#DBEAFE]"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"/>
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"/>
           </svg>
         </button>
-        <nav className='hidden md:flex gap-2'>
-                  {navLinks.map((nav) => (
-                    <Link 
-                      key={nav.id} 
-                      href={'/'}
-                      onClick={() => setActive(nav.title)}
-                      className={`${active === nav.title ? "text-red-200" : "text-gray-800"} `}
-                    >
-                        {nav.title}
-                    </Link>
-                  ))}
-                </nav>
+        
+        {/* Nav links desktop */}
+        <div className='hidden lg:flex justify-between items-center gap-[4rem] '>
+          <nav className='hidden md:flex gap-[4rem]'>
+            {navLinks.map((nav) => (
+              <Link 
+                key={nav.id} 
+                href={'/'}
+                onClick={() => setActive(nav.title)}
+                className='text-secondary text-[1.125rem]'
+              >
+                {nav.title}
+              </Link>
+            ))}
+          </nav>
+
+          <Link
+            href='/'
+            className="relative inline-flex mx-auto w-full"
+          >
+            <button className="smaller-button">Let&apos;s Work</button>
+            <button className="smaller-button-behind"></button>
+          </Link>
+
+        </div>
+
       </div>
 
       {/* Mobile menu area */}
