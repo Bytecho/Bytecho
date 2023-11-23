@@ -36,12 +36,12 @@ const ServicesButtons = () => {
     return ( 
         <div className='page'>
             <h2 className='h1 text-white'>OUR SERVICES</h2>
-            <div className='mt-[2rem] sm:mt-[2.5rem] flex flex-col gap-[0.5rem]'>
+            <div className='mt-[2rem] sm:mt-[2.5rem] flex flex-col lg:grid lg:grid-cols-2 gap-[0.5rem] lg:gap-[1.5rem]'>
                 {buttons.map((button) => (
-                    <button key={button.id} className='px-[1rem] py-[0.5rem] flex items-center justify-between rounded-lg border-t border-r border-gray-500 shadow-2xl'>
+                    <button key={button.id} className='px-[1rem] py-[0.5rem] lg:py-[1rem] flex items-center justify-between rounded-lg border-t border-r border-gray-500 shadow-2xl'>
                         <div className='flex items-center gap-[1.5rem]'>
-                            <Image src={button.icon} alt={button.iconAlt} title={`${button.iconAlt} icon`} className='h-[2.5rem] w-[2.5rem]' />
-                            <p className='text-textBrand'>{button.title}</p>
+                            <Image src={button.icon} alt={button.iconAlt} title={`${button.iconAlt} icon`} className='h-[2.5rem] w-[2.5rem] lg:h-[3rem] lg:w-[3rem]' />
+                            <p className='text-textBrand lg:text-[1.5rem]'>{button.title}</p>
                         </div>
                         <svg className="h-8 w-8 text-white"  width="24" height="24" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
                             <path stroke="none" d="M0 0h24v24H0z"/><polyline points="9 6 15 12 9 18" />
