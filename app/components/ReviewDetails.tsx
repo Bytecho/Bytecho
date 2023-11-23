@@ -5,7 +5,7 @@ export default function ReviewDetails({data, currentReview}: any) {
 
     return (
         <div className="flex flex-col gap-[1.5rem] transition-opacity duration-500">
-            <p className="text-textBrand text-[1.125rem] font-bold leading-[1.375rem]">
+            <p className=" text-textBrand text-[1.125rem] lg:text-[1.5rem] font-bold leading-[1.375rem] lg:leading-[1.7rem]">
               {data[currentReview]?.fields.reviewText as any}
             </p>
 

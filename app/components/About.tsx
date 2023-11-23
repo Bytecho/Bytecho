@@ -38,14 +38,14 @@ export default function About() {
   ]
   
     return (
-    <div className='pb-[3.5rem]'>
+    <div className='pb-[3.5rem] lg:pb-[4rem]'>
         <main className='page pb-[3.5rem] md:pb-[4rem]'>
-            <div className=" flex flex-col gap-[2rem]">
+            <div className=" flex flex-col gap-[2rem] lg:gap-[3.5rem]">
                 {/* Values container */}
-                <div className='flex flex-col gap-[2rem]'>
-                    <h2 className='h1 text-white'>WHO WE ARE</h2>
+                <div className='flex flex-col lg:flex-row gap-[2rem]'>
+                    <h2 className='h1 text-white lg:min-w-[6.8rem]'>WHO WE ARE</h2>
                         {/* Values array */}
-                        <div className='flex flex-col gap-[2rem] md:grid grid-cols-2'>
+                        <div className='flex flex-col gap-[2rem] md:grid grid-cols-2 lg:grid-cols-3'>
                             {values.map((value) => (
                                 <div key={value.id} className='flex flex-col gap-[1rem]'>
                                     <h3 className='h3 text-[#9CA3AF]'>{value.title}</h3>
@@ -56,10 +56,10 @@ export default function About() {
                 </div>
 
                 {/* Reasons container */}
-                <div className='flex flex-col gap-[2rem]'>
+                <div className='flex flex-col lg:flex-row gap-[2rem]'>
                     <h2 className='h1 text-[#E5E7EB]'>Why Bytecho?</h2>
                     {/* Reasons array */}
-                    <div className='flex flex-col gap-[2rem] md:grid grid-cols-2'>
+                    <div className='flex flex-col gap-[2rem] md:grid grid-cols-2 lg:grid-cols-3'>
                         {reasons.map((reason) => (
                             <div key={reason.id} className='flex flex-col gap-[1rem]'>
                                 <h3 className='h3 text-[#9CA3AF]'>{reason.title}</h3>
@@ -71,15 +71,19 @@ export default function About() {
                 </div>
             </div>
 
-            <p className='mt-[2rem] sm:mt-[2.5rem] md:mt-[3.5rem] text-[1.25rem] md:text-[1.5rem] font-bold leading-[1.625rem] md:leading-[1.75rem] text-[#D1FAE5] md:text-center '>
-                We&apos;re not just building websites; we&apos;re building success stories, one project at a time.
+            <p className='mt-[2rem] text-[#D1FAE5] sm:mt-[2.5rem] md:mt-[3.5rem] lg:mx-auto text-[1.25rem] md:text-[1.5rem] font-bold leading-[1.625rem] md:leading-[1.75rem] md:text-center lg:max-w-[31.25rem] '>
+                We&apos;re not just building websites; We&apos;re building success stories, one project at a time.
             </p>
         </main>
         
         {/* Green area */}
-        <div className='py-[3.5rem] page bg-gradient-to-r from-[#09D092] to-[#059669] flex flex-col gap-[2rem] '>
-            <p className='text-[1rem] leading-[1rem] underline decorat decoration-black'>It all begins with a spark, a brilliant idea. </p>
-            <h3 className='text-[1.125rem] leading-[1.25rem] sm:w-2/3 font-bold text-[#F9FAFB]'>
+        <div 
+            className='py-[3.5rem] lg:py-[4rem] page bg-gradient-to-r from-[#09D092] to-[#059669] flex flex-col lg:flex-row lg:items-center gap-[2rem] '
+        >
+            <p className='text-[1rem] lg:text-[1.3rem] leading-[1rem] lg:leading-[1.75rem] underline decorat decoration-black'>
+                It all begins with a spark, a brilliant idea. 
+            </p>
+            <h3 className='text-[1.125rem] lg:text-[2.25rem] leading-[1.25rem] lg:leading-[2.125rem] sm:w-2/3 font-bold text-[#F9FAFB]'>
                 WE&apos;RE HERE TO HELP YOU <span className='text-[#022C22]'>TRANSFORM THAT SPARK</span> INTO A BLAZING DIGITAL PRESENCE. 
             </h3>
         </div>
