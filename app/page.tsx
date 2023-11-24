@@ -7,7 +7,7 @@ import Services from "./components/Services";
 export default function Home() {
   return (
     <div className=" bg-primary ">
-      <div className="lg:flex">
+      <div className="lg:flex lg:items-center xl:gap-2 xl:max-w-[64rem] xl:mx-auto">
         <div className="lg:w-2/5 lg:order-2 ">
           <Animation />
         </div>
