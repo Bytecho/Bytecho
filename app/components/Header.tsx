@@ -32,11 +32,11 @@ export default function Header() {
   ]
   
   return (
-    <nav className='bg-primary'>
-      <div className='py-[1rem] lg:py-[2rem] page flex justify-between items-center '>
+    <nav className='bg-primary '>
+      <div className='py-[1rem] lg:py-[2rem] xl:max-w-[64rem] xl:mx-auto page xl:px-0 flex justify-between items-center '>
         <Link href="/">
           <Image
-            className='md:w-[4.64rem] lg:w-[7rem] md:h-[1.5rem] lg:h-auto'
+            className='md:w-[4.64rem] md:h-[1.5rem] '
             src={Logo}
             alt='Bytecho logo'
             title="Company's logo"

@@ -53,7 +53,7 @@ export default function Footer() {
 
     return (
     <div className='bg-primary page py-[2rem]'>
-        <div className='max-w-[31.25rem] mx-auto md:max-w-[40rem] lg:max-w-[56rem] md:mx-auto md:flex md:gap-[3rem] lg:justify-between'>
+        <div className='max-w-[31.25rem] mx-auto md:max-w-[40rem] lg:max-w-[56rem] xl:max-w-[63rem] md:flex md:gap-[3rem] lg:justify-between'>
             {/* Logo area */}
             <div className=''>
                 <div className='flex flex-col gap-[0.5rem] md:w-[19.68rem]'>

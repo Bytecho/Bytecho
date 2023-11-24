@@ -59,23 +59,23 @@ const Services = () => {
     ]
     
     return ( 
-        <div className="py-[3.5rem] md:py-[4rem] lg:py-[6rem] font-sans" >
+        <div className="pt-[3.5rem] md:pt-[4rem] lg:pt-[6rem] font-sans" >
             <div className=" relative ">
                 <Image src={GridBg} className='absolute w-full h-full object-cover' alt='vector background' title='vector background'  />
     
-                <div className='flex flex-col gap-[1rem] sm:gap-[2.5rem] md:gap-[4.5rem] px-[1rem] sm:px-[9rem] md:px-[4rem] text-center'>
+                <div className='flex flex-col gap-[1rem] sm:gap-[2.5rem] md:gap-[4.5rem] xl:gap-[6rem] px-[1rem] sm:px-[9rem] md:px-[4rem] xl:px-0 text-center xl:max-w-[64rem] xl:mx-auto'>
                     {/* Services container */}
                     {services.map((service, index) => (
                         <div key={service.id} className={`flex flex-col md:flex-row gap-[1rem] md:gap-[2rem] ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}>
                             <h2 className=' text-greenBrand h3 md:hidden'>{service.title}:</h2>
-                            <div className='bg-surfaceGreen/80 p-10 relative rounded-lg w-full lg:w-2/5 h-[16rem] lg:h-[19rem] flex items-center justify-center'>
+                            <div className='bg-surfaceGreen/80 p-10 relative rounded-lg w-full lg:w-2/5 xl:w-3/5 h-[16rem] lg:h-[19rem] xl:h-[25rem] flex items-center justify-center'>
                                 <Image 
                                     src={Vector} 
                                     alt="Vector background"
                                     title='Vector background'  
                                     className='w-full md:h-full absolute md:object-fill'
                                 />
-                                <Image src={service.logo} alt={service.logoDescription} title={service.logoDescription} className='z-10 w-[8.25rem] h-[7.64rem]' />
+                                <Image src={service.logo} alt={service.logoDescription} title={service.logoDescription} className='z-10 w-[8.25rem] xl:w-[10rem] h-[7.64rem] xl:h-auto' />
                             </div>
                             <div className='flex flex-col md:justify-center gap-[1rem] md:text-left lg:w-3/5'>
                                 <h2 className=' text-greenBrand h3 hidden md:inline '>{service.title}:</h2>
@@ -95,8 +95,8 @@ const Services = () => {
             </div>
 
             {/* Blue container */}
-            <div className='mt-[3.5rem] py-[3.5rem] md:py-[4rem] lg:my-[6rem] page mb-[3.5rem] bg-gradient-to-tr from-[#1E40AF] to-[#2563EB]'>
-                <div className='flex flex-col lg:flex-row lg:items-center gap-[2rem] lg:gap-[3rem] md:max-w-[31.25rem] lg:max-w-[56rem] lg:mx-auto'>
+            <div className='mt-[3.5rem] py-[3.5rem] md:py-[4rem] lg:mt-[6rem] page bg-gradient-to-tr from-[#1E40AF] to-[#2563EB]'>
+                <div className='flex flex-col lg:flex-row lg:items-center xl:justify-center gap-[2rem] lg:gap-[3rem] md:max-w-[31.25rem] lg:max-w-[56rem] lg:mx-auto'>
                     <h3 className='h3 lg:text-[2.25rem] lg:leading-[2.125rem] text-[#F3F4F6] lg:max-w-[18.75rem]'>CONTINUOUS SUPPORT</h3>
                     <p className="info-p text-[#DBEAFE] lg:max-w-[25rem]">Our commitment doesn&apos;t stop at launch. We provide ongoing support to keep your digital presence ahead of the curve.</p>
                 </div>

@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .page {
-  @apply px-[1rem] sm:px-[3rem] md:px-[4rem];
+  @apply px-[1rem] sm:px-[3rem] md:px-[4rem] xl:px-0;
 }
 
 .h1 {
