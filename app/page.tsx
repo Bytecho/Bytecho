@@ -1,5 +1,6 @@
 import About from "./components/About";
 import Animation from "./components/Animation";
+import Form from "./components/Form";
 import Intro from "./components/Intro";
 import Reviews from "./components/Reviews";
 import Services from "./components/Services";
@@ -18,6 +19,7 @@ export default function Home() {
       <Services />
       <About />
       <Reviews />
+      <Form />
     </div>
   )
 }
