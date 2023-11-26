@@ -13,6 +13,8 @@
     "contentful": "^10.6.7",
     "dotenv": "^16.3.1",
     "formik": "^2.4.5",
+    "framer-motion": "^10.16.5",
+    "lottie-react": "^2.4.0",
     "next": "14.0.1",
     "react": "^18",
     "react-dom": "^18",
