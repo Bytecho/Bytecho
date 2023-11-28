@@ -16,10 +16,40 @@
         "handleQuotes": {
           "deploymentBucketName": "amplify-bytecho-dev-152428-deployment",
           "s3Key": "amplify-builds/handleQuotes-4f31794f6c6e37557251-build.zip"
-        }
+        },
+        "handleQuotesStaging": {}
       },
       "api": {
         "quotes": {}
+      }
+    }
+  },
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-bytecho-staging-153908-authRole",
+      "UnauthRoleArn": "arn:aws:iam::216994933321:role/amplify-bytecho-staging-153908-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::216994933321:role/amplify-bytecho-staging-153908-authRole",
+      "Region": "ap-southeast-2",
+      "DeploymentBucketName": "amplify-bytecho-staging-153908-deployment",
+      "UnauthRoleName": "amplify-bytecho-staging-153908-unauthRole",
+      "StackName": "amplify-bytecho-staging-153908",
+      "StackId": "arn:aws:cloudformation:ap-southeast-2:216994933321:stack/amplify-bytecho-staging-153908/1237e820-8da8-11ee-ba70-0ade2f85dfb3",
+      "AmplifyAppId": "d1o3qaxoc2dgza"
+    },
+    "categories": {
+      "function": {
+        "handleQuotes": {
+          "deploymentBucketName": "amplify-bytecho-staging-153908-deployment",
+          "s3Key": "amplify-builds/handleQuotes-6c6d7162374954427032-build.zip"
+        },
+        "handleQuotesStaging": {
+          "deploymentBucketName": "amplify-bytecho-staging-153908-deployment",
+          "s3Key": "amplify-builds/handleQuotesStaging-756b2f74642b6364576f-build.zip"
+        }
+      },
+      "api": {
+        "quotes": {},
+        "staging": {}
       }
     }
   }
