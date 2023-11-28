@@ -6,7 +6,7 @@ export default function Intro() {
     <div className='page lg:flex lg:flex-col lg:pb-[4.5rem] '>
         <div className=" pt-[1.25rem] lg:pt-0 flex flex-col gap-[0.5rem] lg:gap-[2rem] xl:gap-[3rem] lg:order-2">
             <h1 className="text-[#F3F4F6] h3 md:text-[1.5rem] md:leading-[1.75rem]">
-                We specialise in <span className="text-greenBrand">Branding, Custom Web Design and Development.</span>
+                We specialise in <span className="text-greenBrand">Branding, Custom Web Design and Development</span>
             </h1>
             <p className="text-blue-200 text-[0.875rem] md:text-[1rem] xl:text-[1.3rem] leading-[1.25rem] md:leading-[1.5rem] xl:leading-[1.7rem] ">
                 Whether you&apos;re starting from scratch or looking to elevate your existing brand, we&apos;ve got the creative edge and the tech-savvy to make it happen.
