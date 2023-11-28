@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "paths": {
+    "/create": {
+      "name": "/create",
+      "lambdaFunction": "handleQuotes",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}
