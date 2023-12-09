@@ -9,6 +9,7 @@ import Lottie, {LottieRefCurrentProps} from "lottie-react";
 
 // Assets
 import Success from '../../assets/mail-animation.json';
+import Fail from '../../assets/fail-animation.json';
 
 // Amplify configuration
 import config from '@/../../src/amplifyconfiguration.json';
@@ -103,7 +104,6 @@ export default function Form() {
                         }, 4000);
                     }
                 } catch(err:any) {
-                    console.error(err)
                     setRenderForm(false);
                     setRenderErrorMessage(true)
                     setTimeout(() => {
@@ -137,7 +137,7 @@ export default function Form() {
     
     // For Lottie animation
     const successRef = useRef<LottieRefCurrentProps>(null);
-    // const errorRef = useRef<LottieRefCurrentProps>(null); 
+    const errorRef = useRef<LottieRefCurrentProps>(null); 
 
     return (
     <div className='page'>
@@ -242,14 +242,14 @@ export default function Form() {
                             </div>
                         </label>
 
-                        <ReCAPTCHA
+                        {/* <ReCAPTCHA
                             sitekey={siteKey}
                             onChange={onChange}
                         >
                             {clickedSubmit && !isVerified && (
                                 <p className="text-red-400">Please complete the reCaptcha verification</p>
                             )}
-                        </ReCAPTCHA>
+                        </ReCAPTCHA> */}
                         
                         <button 
                             className='relative inline-flex mx-auto w-full lg:hidden' 
@@ -263,21 +263,41 @@ export default function Form() {
                 </div>
             )}
             {!renderForm && renderSuccessMessage && (
-                <Lottie
-                    className='h-[10rem]'
-                    onComplete={() => {
-                        successRef.current?.stop
-                    }}
-                    lottieRef={successRef}
-                    loop={false}
-                    animationData={Success}
-                />
+                <div className="flex flex-col items-center justify-center xl:justify-around h-full">
+                    <Lottie
+                        className='h-[10rem]'
+                        onComplete={() => {
+                            successRef.current?.stop
+                        }}
+                        lottieRef={successRef}
+                        loop={false}
+                        animationData={Success}
+                    />
+                    <p className="mt-[1rem] lg:mt-0 text-center text-lg lg:text-xl">Your quote request has been sent. We will get in touch as soon as possible. You can also contact us at 
+                        <br className="md:hidden" /> 
+                        <a className='text-[#059669]' href="tel:+61414029043">0414029043</a>.
+                    </p>
+                </div>
             )}
 
             {/* {!renderForm && renderSuccessMessage && ( */}
             {/* Render error animation when the form could not been submitted */}
             {!renderForm && renderErrorMessage && (
-                <h2>Error</h2>
+                <div className="flex flex-col items-center justify-center xl:justify-around h-full">
+                    <Lottie
+                        className='h-[10rem]'
+                        onComplete={() => {
+                            successRef.current?.stop
+                        }}
+                        lottieRef={errorRef}
+                        loop={false}
+                        animationData={Fail}
+                    />
+                    <p className="mt-[1rem] lg:mt-0 text-center text-lg lg:text-xl">Sorry, your message could not be sent. Please try again later or contact us at 
+                        <br className="md:hidden" /> 
+                        <a className='text-red-600' href="tel:+61414029043">0414029043</a>.
+                    </p>
+                </div>
             )}
         </div>
     </div>
