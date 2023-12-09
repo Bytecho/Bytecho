@@ -30,7 +30,7 @@ exports.handler = async(event) => {
                 </mj-attributes>
             </mj-head>
             <mj-body>
-                <mj-section background-color="#262626">
+                <mj-section background-color="#1F2937">
                     <mj-column>
                         <mj-image src=${imgUrl} alt="Worldly logo" align="center" width="99px" padding="0"></mj-image>
                     </mj-column>
@@ -38,21 +38,21 @@ exports.handler = async(event) => {
                 <mj-section padding-top="32px" padding-left="16px" padding-right="16px" padding-bottom="16px" >
                     <mj-text font-size="16px">Hello ${parsedBody.name} <br/><br/><br/></mj-text>
                     <mj-text font-size="16px">Thank you for contacting us at Bytecho. We have received your message and appreciate your interest in our services.<br/><br/></mj-text>
-                    <mj-text font-size="16px">Our team will review your inquiry and get back to you as soon as possible. If you have any urgent matters, please feel free to contact us directly at 0400968140.<br/><br/></mj-text>
-                    <mj-text font-size="16px">We look forward to the opportunity to serve you and provide exceptional cleaning solutions for your needs.<br/><br/><br/></mj-text>
+                    <mj-text font-size="16px">Our team will review your inquiry and get back to you as soon as possible. If you have any urgent matters, please feel free to contact us directly at 0414029043.<br/><br/></mj-text>
+                    <mj-text font-size="16px">We look forward to the opportunity to serve you and provide exceptional digital solutions for your needs.<br/><br/><br/></mj-text>
                 
                     <mj-text font-size="16px" >Best regards,<br/><br/></mj-text>
-                    <mj-text font-size="16px" >Bennett Cleaning Services Team.<br/><br/></mj-text>
+                    <mj-text font-size="16px" >Bytecho Team.<br/><br/></mj-text>
                     <mj-section padding-left="40px" padding-right="30px"> 
-                        <mj-divider border-color="#FF9933" border-width="2px"></mj-divider>
+                        <mj-divider border-color="#1E40AF" border-width="2px"></mj-divider>
                     </mj-section>
                     <mj-section padding="0">
                         <mj-wrapper padding="0" display="flex"  >
                             <mj-column mj-class="phone" vertical-align="middle">
-                                <mj-text color="#262626" align="center">+61 400 968 140</mj-text>
+                                <mj-text color="#262626" align="center">+61 414 029 043</mj-text>
                             </mj-column>
                             <mj-column vertical-align="middle">
-                                <mj-text align="center">TAS - Australia</mj-text>
+                                <mj-text align="center">Australia</mj-text>
                             </mj-column>
                         </mj-wrapper>
                     </mj-section>
