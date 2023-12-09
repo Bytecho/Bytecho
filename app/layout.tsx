@@ -3,10 +3,13 @@ import { Inter } from 'next/font/google'
 import { Bebas_Neue } from 'next/font/google'
 import './globals.css'
 
+
 // Components
 import Header from './components/Header'
 import Footer from './components/Footer'
 
+// Amplify config
+import ConfigureAmplifyClientSide from '@/app/ConfigureAmplifyClientSide';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -24,13 +27,16 @@ export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
-}) {
+}) { 
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Header />
+        <>
+          <ConfigureAmplifyClientSide />
+          <Header />
           {children}
-        <Footer />
+          <Footer />
+        </>
       </body>
     </html>
   )
