@@ -10,7 +10,32 @@ import Lottie, {LottieRefCurrentProps} from "lottie-react";
 // Assets
 import Success from '../../assets/mail-animation.json';
 
+// Amplify configuration
+import config from '@/../../src/amplifyconfiguration.json';
+import { Amplify } from 'aws-amplify';
+import { post } from 'aws-amplify/api';
+
+// API key
+const apiKey:any = process.env.NEXT_PUBLIC_AMPLIFY_API_KEY;
+
+Amplify.configure(config, {
+    API: {
+      REST: {
+        headers: async () => {
+          return { 'X-Api-Key': apiKey };
+        },
+      },
+    }
+  });
+
+
 export default function Form() {
+
+    // State for the text of the button
+    const [buttonText, setButtonText] = useState('Submit');
+    const [isSending, setIsSending] = useState(false);
+    
+    
     const formik = useFormik({
         // Declare initial values
         initialValues: {
@@ -40,10 +65,53 @@ export default function Form() {
             terms: Yup.array().required("Terms of service must be checked")
         }), 
 
-        onSubmit: (values) => {
+        onSubmit: async (values) => {
+            // Allow to submit just if captcha has been verified
             if(isVerified === true) {
-                setRenderForm(!renderForm)
-                console.log(values, 'submitted');
+                setButtonText('Sending...');
+                setIsSending(true);
+                try{
+                    let resOperation = post({
+                        apiName: 'quotes',
+                        path: '/create',
+                        options: {
+                            body: {
+                                name: formik.values.firstname,
+                                lastname: formik.values.lastname,
+                                email: formik.values.email,
+                                project: formik.values.project,
+                                description: formik.values.description
+                            }
+                        }
+                    })
+                    if((await resOperation.response).statusCode == 200) {
+                        setRenderForm(!renderForm);
+                        setRenderSuccessMessage(true);
+                        // handleSubmitForm();
+                        setTimeout(() => {
+                            // Reset the button text and indicate that the form has been sent
+                            setButtonText('Message sent');
+                            setIsSending(false);
+                        }, 4000);
+                    } else {
+                        setRenderForm(false);
+                        setRenderErrorMessage(true)
+                        setTimeout(() => {
+                            // Reset the button text and indicate that the form has been sent
+                            setButtonText('Message not sent');
+                            setIsSending(false);
+                        }, 4000);
+                    }
+                } catch(err:any) {
+                    console.error(err)
+                    setRenderForm(false);
+                    setRenderErrorMessage(true)
+                    setTimeout(() => {
+                        // Reset the button text and indicate that the form has been sent
+                        setButtonText('Message not sent');
+                        setIsSending(false);
+                    }, 4000);
+                }
             }
         }
     })
@@ -62,7 +130,10 @@ export default function Form() {
 
     // State to render or hide form when success sending message
     const [renderForm, setRenderForm] = useState(true);
-    // const [renderSuccessMessage, setRenderSuccessMessage] = useState(false);
+    const [renderSuccessMessage, setRenderSuccessMessage] = useState(false);
+
+     // State to render error when sending message
+     const [renderErrorMessage, setRenderErrorMessage] = useState(false);
     
     // For Lottie animation
     const successRef = useRef<LottieRefCurrentProps>(null);
@@ -185,13 +256,13 @@ export default function Form() {
                             type='submit'
                             onClick={() => setClickedSubmit(true)}
                             >
-                            <span className="smaller-button lg:w-full">Let&apos;s Work Together</span>
+                            <span className="smaller-button lg:w-full">{buttonText}</span>
                             <span className="smaller-button-behind"></span>
                         </button>
                     </form>                
                 </div>
             )}
-            {!renderForm && (
+            {!renderForm && renderSuccessMessage && (
                 <Lottie
                     className='h-[10rem]'
                     onComplete={() => {
@@ -201,6 +272,12 @@ export default function Form() {
                     loop={false}
                     animationData={Success}
                 />
+            )}
+
+            {/* {!renderForm && renderSuccessMessage && ( */}
+            {/* Render error animation when the form could not been submitted */}
+            {!renderForm && renderErrorMessage && (
+                <h2>Error</h2>
             )}
         </div>
     </div>

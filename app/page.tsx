@@ -4,6 +4,7 @@ import Form from "./components/Form";
 import Intro from "./components/Intro";
 import Reviews from "./components/Reviews";
 import Services from "./components/Services";
+// import Trial from "./components/Trial";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       <About />
       <Reviews />
       <Form />
+      {/* <Trial /> */}
     </div>
   )
 }

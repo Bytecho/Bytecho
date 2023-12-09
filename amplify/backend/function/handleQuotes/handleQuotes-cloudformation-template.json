@@ -89,12 +89,12 @@
         "RoleName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "bytechoLambdaRoleb2b01639",
+            "bytechobkLambdaRolee27f2968",
             {
               "Fn::Join": [
                 "",
                 [
-                  "bytechoLambdaRoleb2b01639",
+                  "bytechobkLambdaRolee27f2968",
                   "-",
                   {
                     "Ref": "env"
