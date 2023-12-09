@@ -12,7 +12,7 @@ import Success from '../../assets/mail-animation.json';
 import Fail from '../../assets/fail-animation.json';
 
 // Amplify configuration
-import config from '@/../../src/amplifyconfiguration.json';
+import config from '@/src/amplifyconfiguration.json';
 import { Amplify } from 'aws-amplify';
 import { post } from 'aws-amplify/api';
 
