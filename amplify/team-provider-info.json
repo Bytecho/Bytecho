@@ -15,7 +15,7 @@
       "function": {
         "handleQuotes": {
           "deploymentBucketName": "amplify-bytechobk-dev-133505-deployment",
-          "s3Key": "amplify-builds/handleQuotes-6132576455784e685253-build.zip"
+          "s3Key": "amplify-builds/handleQuotes-6b67554d70333757386d-build.zip"
         }
       },
       "api": {
