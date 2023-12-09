@@ -12,7 +12,7 @@ import Success from '../../assets/mail-animation.json';
 import Fail from '../../assets/fail-animation.json';
 
 // Amplify configuration
-import config from '@/../../src/amplifyconfiguration.json';
+import config from '@/src/amplifyconfiguration.json';
 import { Amplify } from 'aws-amplify';
 import { post } from 'aws-amplify/api';
 
@@ -242,14 +242,14 @@ export default function Form() {
                             </div>
                         </label>
 
-                        {/* <ReCAPTCHA
+                        <ReCAPTCHA
                             sitekey={siteKey}
                             onChange={onChange}
                         >
                             {clickedSubmit && !isVerified && (
                                 <p className="text-red-400">Please complete the reCaptcha verification</p>
                             )}
-                        </ReCAPTCHA> */}
+                        </ReCAPTCHA>
                         
                         <button 
                             className='relative inline-flex mx-auto w-full lg:hidden' 
