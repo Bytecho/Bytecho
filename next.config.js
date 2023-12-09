@@ -1,18 +1,4 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-    resolve: {
-        alias: [
-          {
-            find: /^~.+/,
-            replacement: (val) => {
-              return val.replace(/^~/, "");
-            },
-          },
-          {
-            find: './runtimeConfig', replacement: './runtimeConfig.browser',
-          }
-        ],
-      },
-}
+const nextConfig = {}
 
 module.exports = nextConfig
