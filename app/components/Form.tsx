@@ -140,15 +140,19 @@ export default function Form() {
     const errorRef = useRef<LottieRefCurrentProps>(null); 
 
     return (
-    <div className='page'>
-        <div className='rounded bg-surfaceBlue p-[1rem]'>
+    <div className='page lg:flex xl:px-[3rem] xl:mx-auto'>
+        <div className='hidden rounded-l-lg lg:flex flex-col gap-[2rem] justify-center bg-gradient-to-tr from-[#1E40AF] to-[#2563EB] p-[4rem] w-2/5'>
+            <h3 className='text-[#DBEAFE] text-[1.875rem] font-bold leading-[2.06rem]'>Ready To Craft Your Digital Masterpiece?</h3>
+            <p className='text-[#F3F4F6] text-[1.25rem]'>Let&apos;s Work Together</p>
+        </div>
+        <div className='rounded md:rounded-lg lg:rounded-l-none lg:rounded-r-lg bg-surfaceBlue p-[1rem] md:py-[1.5rem] md:px-[4rem] w-full'>
             {renderForm && (
-                <div className='flex flex-col gap-[1rem]'>
+                <div className='flex flex-col gap-[1rem] md:gap-[1.5rem]'>
                     <h3 className='h3'>Let&apos;s Work Together</h3>
                     <p className="text-[0.75rem]">It all begins with a spark, a brilliant idea.  Lets make it real</p>
                     <form 
                         onSubmit={formik.handleSubmit} 
-                        className="bg-white rounded p-[1rem] flex flex-col gap-[1rem] "
+                        className="bg-white rounded shadow-2xl p-[1rem] xl:py-[2rem] xl:px-[2.5rem] flex flex-col gap-[1rem] "
                     >
                         <label htmlFor="firstname" className='flex flex-col gap-[0.5rem]'>
                             <span className={`${formik.touched.firstname && formik.errors.firstname ? 'text-red-400' : 'text-black'}`}>
@@ -165,6 +169,7 @@ export default function Form() {
                                 onChange={formik.handleChange} 
                                 placeholder='Enter your name' 
                                 onBlur={formik.handleBlur}
+                                className='border-none px-0 '
                             />
                         </label>
                         <label htmlFor="lastname" className='flex flex-col gap-[0.5rem]'>
@@ -182,6 +187,7 @@ export default function Form() {
                                 onChange={formik.handleChange} 
                                 placeholder='Enter your last name' 
                                 onBlur={formik.handleBlur}
+                                className='border-none px-0 '
                             />
                         </label>
                         <label htmlFor="email" className='flex flex-col gap-[0.5rem]'>
@@ -199,12 +205,13 @@ export default function Form() {
                                 onChange={formik.handleChange} 
                                 placeholder='Enter your email address' 
                                 onBlur={formik.handleBlur}
+                                className='border-none px-0 '
                             />
                         </label>
                         <label htmlFor="project" className='flex flex-col gap-[0.5rem]'>
                             <span>Project</span>
                             <div>
-                                <select name="project" value={formik.values.project} onChange={formik.handleChange} className='w-full'>
+                                <select name="project" value={formik.values.project} onChange={formik.handleChange} className='w-full rounded'>
                                     <option >Design</option>
                                     <option> Web</option>
                                 </select>
@@ -222,9 +229,9 @@ export default function Form() {
                                 name='description' 
                                 value={formik.values.description} 
                                 onChange={formik.handleChange} 
-                                className=' plac'
                                 placeholder='Please let us know your ideas for your project and how we can help you' 
                                 onBlur={formik.handleBlur}
+                                className='rounded min-h-[5rem]'
                             />
                         </label>
                         {/* Terms */}
@@ -242,17 +249,17 @@ export default function Form() {
                             </div>
                         </label>
 
-                        {/* <ReCAPTCHA
+                        <ReCAPTCHA
                             sitekey={siteKey}
                             onChange={onChange}
                         >
                             {clickedSubmit && !isVerified && (
                                 <p className="text-red-400">Please complete the reCaptcha verification</p>
                             )}
-                        </ReCAPTCHA> */}
+                        </ReCAPTCHA>
                         
                         <button 
-                            className='relative inline-flex mx-auto w-full lg:hidden' 
+                            className='relative inline-flex mx-auto w-full' 
                             type='submit'
                             onClick={() => setClickedSubmit(true)}
                             >
@@ -263,7 +270,12 @@ export default function Form() {
                 </div>
             )}
             {!renderForm && renderSuccessMessage && (
-                <div className="flex flex-col items-center justify-center xl:justify-around h-full">
+                <motion.div 
+                    className="flex flex-col items-center justify-center xl:justify-around h-full"
+                    animate={{ scale: 1, y: 0}}
+                    transition={{ type: "tween", duration: 1}}
+                    initial={{ scale: 0, y: 100}}
+                >
                     <Lottie
                         className='h-[10rem]'
                         onComplete={() => {
@@ -273,17 +285,22 @@ export default function Form() {
                         loop={false}
                         animationData={Success}
                     />
-                    <p className="mt-[1rem] lg:mt-0 text-center text-lg lg:text-xl">Your quote request has been sent. We will get in touch as soon as possible. You can also contact us at 
+                    <p className="mt-[1rem] lg:mt-0 text-center text-lg font-bold lg:text-xl">Your quote request has been sent. We will get in touch as soon as possible. You can also contact us at 
                         <br className="md:hidden" /> 
                         <a className='text-[#059669]' href="tel:+61414029043">0414029043</a>.
                     </p>
-                </div>
+                </motion.div>
             )}
 
             {/* {!renderForm && renderSuccessMessage && ( */}
             {/* Render error animation when the form could not been submitted */}
             {!renderForm && renderErrorMessage && (
-                <div className="flex flex-col items-center justify-center xl:justify-around h-full">
+                <motion.div 
+                    className="flex flex-col items-center justify-center xl:justify-around h-full"
+                    animate={{ scale: 1, y: 0}}
+                    transition={{ type: "tween", duration: 1}}
+                    initial={{ scale: 0, y: 100}}
+                >
                     <Lottie
                         className='h-[10rem]'
                         onComplete={() => {
@@ -293,11 +310,11 @@ export default function Form() {
                         loop={false}
                         animationData={Fail}
                     />
-                    <p className="mt-[1rem] lg:mt-0 text-center text-lg lg:text-xl">Sorry, your message could not be sent. Please try again later or contact us at 
+                    <p className="mt-[1rem] lg:mt-0 text-center text-lg font-bold lg:text-xl">Sorry, your message could not be sent. Please try again later or contact us at 
                         <br className="md:hidden" /> 
                         <a className='text-red-600' href="tel:+61414029043">0414029043</a>.
                     </p>
-                </div>
+                </motion.div>
             )}
         </div>
     </div>

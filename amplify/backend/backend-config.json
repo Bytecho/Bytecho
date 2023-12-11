@@ -13,10 +13,29 @@
       ],
       "providerPlugin": "awscloudformation",
       "service": "API Gateway"
+    },
+    "services": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "handleServices"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
     }
   },
   "function": {
     "handleQuotes": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "handleServices": {
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
@@ -36,6 +55,22 @@
         {
           "category": "function",
           "resourceName": "handleQuotes"
+        }
+      ]
+    },
+    "AMPLIFY_function_handleServices_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "handleServices"
+        }
+      ]
+    },
+    "AMPLIFY_function_handleServices_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "handleServices"
         }
       ]
     }
