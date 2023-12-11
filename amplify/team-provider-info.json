@@ -15,11 +15,16 @@
       "function": {
         "handleQuotes": {
           "deploymentBucketName": "amplify-bytechobk-dev-133505-deployment",
-          "s3Key": "amplify-builds/handleQuotes-6b67554d70333757386d-build.zip"
+          "s3Key": "amplify-builds/handleQuotes-51767943346d72465636-build.zip"
+        },
+        "handleServices": {
+          "deploymentBucketName": "amplify-bytechobk-dev-133505-deployment",
+          "s3Key": "amplify-builds/handleServices-7949654e424161586c52-build.zip"
         }
       },
       "api": {
-        "quotes": {}
+        "quotes": {},
+        "services": {}
       }
     }
   }

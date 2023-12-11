@@ -4,7 +4,6 @@ import React from 'react'
 
 export default function Reasons(currentService:any) {
 
-  console.log(currentService)
     return (
     <div>
         <h2 className='h3 text-white text-center'>Why Choose Bytecho?</h2>

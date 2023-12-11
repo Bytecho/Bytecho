@@ -12,10 +12,14 @@ import Image from 'next/image';
 // Components
 import ReviewDetails from './ReviewDetails';
 
+// Contentful keys
+const spaceKey:any = process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID;
+const accessToken:any = process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_KEY;
+
 // Create client for contentful
 const client = createClient({
-    space: 'ogj4tsqztns9',
-    accessToken: 'zrPhNvg3sTKd_yiL7RHYugQMwaiFn6tegREpD7ra5RM',
+    space: spaceKey,
+    accessToken: accessToken,
 })
 
 

@@ -118,7 +118,7 @@ exports.handler = async(event) => {
                 </mj-section>
                 <mj-section padding-top="32px" padding-left="16px" padding-right="16px" padding-bottom="16px" >
                     <mj-text font-size="16px">Hello Bytecho team <br/><br/><br/></mj-text>
-                    <mj-text font-size="16px">The person ${parsedBody.name} ${parsedBody.lastname} wants to quote for a ${parsedBody.project} service and left you the following message:<br/><br/></mj-text>
+                    <mj-text font-size="16px">The person ${parsedBody.name} ${parsedBody.lastname} wants to quote for a ${parsedBody.service} and left you the following message:<br/><br/></mj-text>
                     <mj-text font-size="16px">"${parsedBody.description}"<br/><br/></mj-text>
                     <mj-text font-size="16px">His/her contact email address is ${parsedBody.email}. <br/><br/></mj-text>
                 

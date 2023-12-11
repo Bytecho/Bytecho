@@ -1,0 +1,15 @@
+{
+  "aws_project_region": "ap-southeast-2",
+  "aws_cloud_logic_custom": [
+    {
+      "name": "quotes",
+      "endpoint": "https://ltsfm73972.execute-api.ap-southeast-2.amazonaws.com/dev",
+      "region": "ap-southeast-2"
+    },
+    {
+      "name": "services",
+      "endpoint": "https://oe3hk92m1i.execute-api.ap-southeast-2.amazonaws.com/dev",
+      "region": "ap-southeast-2"
+    }
+  ]
+}
