@@ -145,11 +145,11 @@ export default function Form() {
             <h3 className='text-[#DBEAFE] text-[1.875rem] font-bold leading-[2.06rem]'>Ready To Craft Your Digital Masterpiece?</h3>
             <p className='text-[#F3F4F6] text-[1.25rem]'>Let&apos;s Work Together</p>
         </div>
-        <div className='rounded md:rounded-lg lg:rounded-l-none lg:rounded-r-lg bg-surfaceBlue p-[1rem] md:py-[1.5rem] md:px-[4rem] w-full'>
+        <div className='rounded md:rounded-lg lg:rounded-l-none lg:rounded-r-lg bg-surfaceBlue p-[1rem] md:py-[1.5rem] md:px-[4rem] lg:py-[2.5rem] xl:py-[3rem] lg:px-[3.5rem] 2xl:py-[4rem] 2xl:px-[8rem] w-full'>
             {renderForm && (
                 <div className='flex flex-col gap-[1rem] md:gap-[1.5rem]'>
-                    <h3 className='h3'>Let&apos;s Work Together</h3>
-                    <p className="text-[0.75rem]">It all begins with a spark, a brilliant idea.  Lets make it real</p>
+                    <h3 className='h3 lg:hidden'>Let&apos;s Work Together</h3>
+                    <p className="text-[0.75rem] lg:hidden">It all begins with a spark, a brilliant idea.  Lets make it real</p>
                     <form 
                         onSubmit={formik.handleSubmit} 
                         className="bg-white rounded shadow-2xl p-[1rem] xl:py-[2rem] xl:px-[2.5rem] flex flex-col gap-[1rem] "
