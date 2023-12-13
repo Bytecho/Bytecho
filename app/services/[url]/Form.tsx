@@ -140,18 +140,18 @@ export default function Form({params} : any) {
 
     return (
     <div className='page lg:flex xl:px-[3rem] xl:mx-auto'>
-        <div className='hidden rounded-l-lg lg:flex flex-col gap-[2rem] justify-center bg-gradient-to-tr from-[#1E40AF] to-[#2563EB] p-[4rem] w-2/5'>
-            <h3 className='text-[#DBEAFE] text-[1.875rem] font-bold leading-[2.06rem]'>Ready To Craft Your Digital Masterpiece?</h3>
-            <p className='text-[#F3F4F6] text-[1.25rem]'>Let&apos;s Work Together</p>
+        <div className='hidden rounded-l-lg lg:flex flex-col gap-[2rem] justify-center bg-gradient-to-tr from-[#1E40AF] to-[#2563EB] p-[4rem] w-2/5 lg:w-2/5'>
+            <h3 className='text-[#DBEAFE] text-[1.875rem] xl:text-[2.25rem] font-bold leading-[2.06rem] xl:leading-[2.625rem]'>Ready To Craft Your Digital Masterpiece?</h3>
+            <p className='text-[#F3F4F6] text-[1.25rem] xl:text-[1.5rem]'>Let&apos;s Work Together</p>
         </div>
-        <div className='rounded md:rounded-lg lg:rounded-l-none lg:rounded-r-lg bg-surfaceBlue p-[1rem] md:py-[1.5rem] md:px-[4rem] w-full'>
+        <div className='rounded md:rounded-lg lg:rounded-l-none lg:rounded-r-lg bg-surfaceBlue p-[1rem] md:py-[1.5rem] md:px-[4rem] lg:py-[2.5rem] xl:py-[3rem] lg:px-[3.5rem] 2xl:py-[4rem] 2xl:px-[8rem] w-full lg:w-3/5'>
             {renderForm && (
                 <div className='flex flex-col gap-[1rem]'>
-                    <h3 className='h3'>Let&apos;s Work Together</h3>
-                    <p className="text-[0.75rem]">It all begins with a spark, a brilliant idea.  Lets make it real</p>
+                    <h3 className='h3 lg:hidden'>Let&apos;s Work Together</h3>
+                    <p className="text-[0.75rem] lg:hidden">It all begins with a spark, a brilliant idea.  Lets make it real</p>
                     <form 
                         onSubmit={formik.handleSubmit} 
-                        className="bg-white rounded p-[1rem] xl:py-[2rem] xl:px-[2.5rem] flex flex-col gap-[1rem] "
+                        className="bg-white rounded-xl shadow-2xl p-[1rem] xl:py-[2rem] xl:px-[2.5rem] flex flex-col gap-[1rem] xl:text-[1.25rem] "
                     >
                         <label htmlFor="firstname" className='flex flex-col gap-[0.5rem]'>
                             <span className={`${formik.touched.firstname && formik.errors.firstname ? 'text-red-400' : 'text-black'}`}>
