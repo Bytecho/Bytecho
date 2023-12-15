@@ -16,7 +16,35 @@ const config: Config = {
         surfaceBlue: '#93C5FD',
         textBrand: '#9CA3AF',
         light: '#F3F4F6'
-      }
+      },
+      keyframes: {
+        'open-menu': {
+          '0%': { transform: 'scaleY(0)' },
+          // '80%': { transform: 'scaleY(1.2)' },
+          '100%': { transform: 'scaleY(1)' },
+        },
+        'close-menu': {
+          '0%': { transform: 'scaleX(1)' },
+          '80%': { transform: 'scaleX(1.5)' },
+          '100%': { transform: 'scaleX(0)' },
+        },
+        'open-services': {
+          '0%': { transform: 'scaleX(0)' },
+          // '80%': { transform: 'scaleY(1.2)' },
+          '100%': { transform: 'scaleX(1)' },
+        },
+        'close-services': {
+          '0%': { transform: 'scaleX(1)' },
+          // '80%': { transform: 'scaleY(1.2)' },
+          '100%': { transform: 'scaleX(0)' },
+        }
+      },
+      animation: {
+        'open-menu': 'open-menu 0.5s ease-in-out forwards',
+        'close-menu': 'close-menu 0.5s ease-in-out forwards',
+        'open-services': 'open-services 0.5s ease-in-out forwards',
+        'close-services': 'close-services 0.5s ease-in-out forwards'
+      },
     },
   },
   plugins: [require("@tailwindcss/forms")],

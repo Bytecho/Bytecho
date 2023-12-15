@@ -168,7 +168,7 @@ exports.handler = async(event) => {
                 },
                 Subject: {
                     Charset: "UTF-8",
-                    Data: "Your quote request",
+                    Data: `New quote request - ${parsedBody.project}`,
                 },
             },
             Source: fromAddress

@@ -43,7 +43,7 @@ export default function Form() {
             firstname: "",
             lastname: "",
             email: "",
-            project: "Design",
+            project: "Branding",
             description: "",
             terms: "",
         },
@@ -212,8 +212,11 @@ export default function Form() {
                             <span>Project</span>
                             <div>
                                 <select name="project" value={formik.values.project} onChange={formik.handleChange} className='w-full rounded'>
-                                    <option >Design</option>
-                                    <option> Web</option>
+                                    <option >Branding</option>
+                                    <option> Web Development</option>
+                                    <option>Search Engine Optimization</option>
+                                    <option>Content Creation</option>
+                                    <option>Social Media</option>
                                 </select>
                             </div>
                         </label>
@@ -287,7 +290,7 @@ export default function Form() {
                     />
                     <p className="mt-[1rem] lg:mt-0 text-center text-lg font-bold lg:text-xl">Your quote request has been sent. We will get in touch as soon as possible. You can also contact us at 
                         <br className="md:hidden" /> 
-                        <a className='text-[#059669]' href="tel:+61414029043">0414029043</a>.
+                        <a className='text-[#059669]' href="tel:+61414029043"> 0414029043</a>.
                     </p>
                 </motion.div>
             )}
