@@ -1,33 +1,15 @@
-import React from 'react'
+'use client'
+
+import React, { useEffect, useState } from 'react'
 
 import Logo from '../../assets/logo-footer.svg'
 import Image from 'next/image'
 import Link from 'next/link'
 
-export default function Footer() {
-  const services = [
-    {
-        id: 1,
-        title: 'Branding & Graphic Design',
-        url: '/'
-    },
-    {
-        id: 2,
-        title: 'Web Development',
-        url: '/'
-    },
-    {
-        id: 3,
-        title: 'SEO Optimization',
-        url: '/'
-    },
-    {
-        id: 4,
-        title: 'Content Creation',
-        url: '/'
-    },
-  ]
-  
+// Utils
+import { fetchData } from '../utils/fetchServices';
+
+export default function Footer() { 
   const navLinks = [
     {
         id: 1,
@@ -37,19 +19,25 @@ export default function Footer() {
     {
         id: 2,
         title: 'Services',
-        url: '/'
+        url: '/#services'
     },
     {
         id: 3,
-        title: 'Blog',
-        url: '/'
-    },
-    {
-        id: 4,
         title: 'Contact',
-        url: '/'
+        url: '/#contact'
     }
   ]
+
+   // Fetch services data from contentful
+   const [services, setServices] = useState<any>()
+   useEffect(() => {
+     async function fetchingData() {
+       const res:any = await fetchData()
+       setServices(res)
+     }
+     fetchingData()
+   }, [])
+ 
 
     return (
     <div className='bg-primary page py-[2rem]'>
@@ -70,7 +58,8 @@ export default function Footer() {
                     </h3>
                     {/* Button */}
                     <Link
-                        href='/'
+                        href='/#contact' 
+                        scroll
                         className="relative inline-flex mt-[2rem]  mx-auto w-full"
                     >
                         <button className="bg-gradient-to-tr from-[#1E40AF] to-[#2563EB] w-full h-[2.75rem] py-[0.5rem] rounded-lg z-10 text-[1.125rem] text-[#E5E7EB]">Contact us</button>
@@ -99,9 +88,9 @@ export default function Footer() {
                     <h4 className='text-[1rem] lg:text-[1.3rem] text-[#E5E7EB]'>
                         Services
                     </h4>
-                    {services.map(service => (
-                        <Link key={service.id} href={service.url}>
-                            <p className='pt-[0.5rem] text-[1rem] lg:text-[1.3rem] text-textBrand'>{service.title}</p>
+                    {services?.map((service:any) => (
+                        <Link key={service.sys.id} href={`/services/${service?.fields.url}`}>
+                            <p className='pt-[0.5rem] text-[1rem] lg:text-[1.3rem] text-textBrand'>{service?.fields.title}</p>
                         </Link>
                     ))}
                 </div>

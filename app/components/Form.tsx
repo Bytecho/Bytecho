@@ -140,7 +140,7 @@ export default function Form() {
     const errorRef = useRef<LottieRefCurrentProps>(null); 
 
     return (
-    <div className='page lg:flex xl:px-[3rem] xl:mx-auto'>
+    <div className='page lg:flex xl:px-[3rem] xl:mx-auto' id='contact'>
         <div className='hidden rounded-l-lg lg:flex flex-col gap-[2rem] justify-center bg-gradient-to-tr from-[#1E40AF] to-[#2563EB] p-[4rem] w-2/5'>
             <h3 className='text-[#DBEAFE] text-[1.875rem] font-bold leading-[2.06rem]'>Ready To Craft Your Digital Masterpiece?</h3>
             <p className='text-[#F3F4F6] text-[1.25rem]'>Let&apos;s Work Together</p>
