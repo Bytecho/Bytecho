@@ -13,7 +13,8 @@ export default function Intro() {
             </p>
             {/* Button for desktops */}
             <Link
-                href='/'
+                href='/#contact'
+                scroll
                 className="hidden relative lg:inline-flex w-[22rem]"
             >
                 <button className="smaller-button lg:w-full">Let&apos;s Work Together</button>
@@ -26,7 +27,8 @@ export default function Intro() {
             </h2>
             {/* Button for mobile */}
             <Link
-                href='/'
+                href='/#contact'
+                scroll
                 className="relative inline-flex mx-auto w-full lg:hidden"
             >
                 <button className="smaller-button">Let&apos;s Work Together</button>
