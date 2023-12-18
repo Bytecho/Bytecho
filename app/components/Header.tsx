@@ -134,7 +134,7 @@ export default function Header() {
             ))}
              {/* Services options */}
              {servicesDisplay && (
-                <ul className='absolute z-50 opacity-80 bg-primary flex flex-col gap-2 mt-[2.2rem] ml-[3rem] w-12rem text-white text-sm animate-open-services'>
+                <ul className='absolute z-50 opacity-80 bg-primary flex flex-col gap-2 mt-[2.2rem] ml-[7rem] w-12rem text-white text-sm animate-open-services'>
                   {services.map((service:any) => (
                     <li key={service.sys.id} className='hover:text-greenBrand cursor-pointer'>
                       <Link 

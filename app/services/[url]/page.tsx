@@ -1,10 +1,9 @@
-// "use client"
-
 import React from 'react'
 import { createClient } from 'contentful'
 import { Entry } from 'contentful';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Metadata } from 'next';
 
 // Components
 import NotFound from '../not-found'
@@ -40,12 +39,27 @@ async function fetchData() {
     return data
 }
 
+export async function generateMetadata({params}: any): Promise<Metadata> {
+    const data = await fetchData()
+
+     // Find the service required by the user
+     const currentService = data.find(entry => entry.fields.url === params.url);
+    
+    return {
+        title: `${currentService?.fields.title} | Bytecho`,
+        description: `${currentService?.fields.metaTagDescription}`,
+        openGraph: {
+            images: [`${(currentService as any)?.fields?.sticker?.fields?.file.url}`]
+        }
+    }
+}
+
 export default async function Services({ params }: PageProps ) {
     const data = await fetchData()
 
     // Find the service required by the user
     const currentService = data.find(entry => entry.fields.url === params.url);
-
+    
     // Handle unkown services request
     if (!currentService) {
         // Handle case where the service is not found

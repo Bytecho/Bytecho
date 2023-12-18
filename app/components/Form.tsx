@@ -252,14 +252,14 @@ export default function Form() {
                             </div>
                         </label>
 
-                        <ReCAPTCHA
+                        {/* <ReCAPTCHA
                             sitekey={siteKey}
                             onChange={onChange}
                         >
                             {clickedSubmit && !isVerified && (
                                 <p className="text-red-400">Please complete the reCaptcha verification</p>
                             )}
-                        </ReCAPTCHA>
+                        </ReCAPTCHA> */}
                         
                         <button 
                             className='relative inline-flex mx-auto w-full' 
