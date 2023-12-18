@@ -68,7 +68,7 @@ const Services = () => {
         }
         fetchingData()
     }, [])
-    console.log(services)
+    
     
     return ( 
         <div className="pt-[3.5rem] md:pt-[4rem] lg:pt-[6rem] font-sans" id='services' >
