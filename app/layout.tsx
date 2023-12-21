@@ -19,8 +19,14 @@ const bebas = Bebas_Neue({
 })
 
 export const metadata: Metadata = {
-  title: 'Bytecho',
+  title: {
+    default: "Bytecho",
+    template: "%s - Bytecho"
+  },
   description: "Experience expert web design services in Australia, tailored to elevate your website's SEO and increase web traffic. Trust our expertise in boosting online visibility.",
+  twitter: {
+    card: "summary_large_image"
+  }
 }
 
 export default function RootLayout({
