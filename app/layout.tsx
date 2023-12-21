@@ -24,6 +24,13 @@ export const metadata: Metadata = {
     template: "%s - Bytecho"
   },
   description: "Experience expert web design services in Australia, tailored to elevate your website's SEO and increase web traffic. Trust our expertise in boosting online visibility.",
+  openGraph: {
+    images: [
+        {
+            url: 'https://staging.d3ubmigrwmce70.amplifyapp.com/_next/static/media/logo-footer.c034fa71.svg'
+        }
+    ]
+  },
   twitter: {
     card: "summary_large_image"
   }
