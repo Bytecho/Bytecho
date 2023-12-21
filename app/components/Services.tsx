@@ -63,8 +63,8 @@ const Services = () => {
     const [services, setServices] = useState<any>()
     useEffect(() => {
         async function fetchingData() {
-        const res:any = await fetchData()
-        setServices(res)
+            const res:any = await fetchData()
+            setServices(res)
         }
         fetchingData()
     }, [])
