@@ -46,10 +46,14 @@ export async function generateMetadata({params}: any): Promise<Metadata> {
      const currentService = data.find(entry => entry.fields.url === params.url);
     
     return {
-        title: `${currentService?.fields.title} | Bytecho`,
+        title: `${currentService?.fields.title}`,
         description: `${currentService?.fields.metaTagDescription}`,
         openGraph: {
-            images: [`${(currentService as any)?.fields?.sticker?.fields?.file.url}`]
+            images: [
+                {
+                    url: `${(currentService as any)?.fields?.sticker?.fields?.file.url}`
+                }
+            ]
         }
     }
 }
