@@ -43,18 +43,26 @@ export async function generateMetadata({params}: any): Promise<Metadata> {
     const data = await fetchData()
 
      // Find the service required by the user
-     const currentService = data.find(entry => entry.fields.url === params.url);
+    const currentService = data.find(entry => entry.fields.url === params.url);
     
     return {
         title: `${currentService?.fields.title}`,
         description: `${currentService?.fields.metaTagDescription}`,
         openGraph: {
+            title: `${currentService?.fields.title}`,
+            description: `${currentService?.fields.metaTagDescription}`,
+            url: 'https://www.aihr.com/wp-content/uploads/Learning-and-development-manager.png',
+            type: 'website',
             images: [
                 {
                     url: 'https://www.aihr.com/wp-content/uploads/Learning-and-development-manager.png'
                     // url: `${(currentService as any)?.fields?.sticker?.fields?.file.url}`
                 }
             ]
+        },
+        robots: {
+            index: true,
+            follow: true
         }
     }
 }
@@ -88,7 +96,9 @@ export default async function Services({ params }: PageProps ) {
                     </h1>
                     <Image 
                         src={(currentService as any)?.fields?.sticker?.fields?.file.url} 
-                        alt='hey' 
+                        alt={`${currentService?.fields?.title} sticker`}
+                        title={`${currentService?.fields?.title} sticker`} 
+                        loading='eager'
                         width={85} height={85} 
                         className='z-10 w-[15.255rem] xl:w-[17.3rem] h-[13.75rem] xl:h-[15.6rem]' 
                     />

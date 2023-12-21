@@ -25,9 +25,13 @@ export const metadata: Metadata = {
   },
   description: "Experience expert web design services in Australia, tailored to elevate your website's SEO and increase web traffic. Trust our expertise in boosting online visibility.",
   openGraph: {
+    title: 'Bytecho',
+    description: "Experience expert web design services in Australia, tailored to elevate your website's SEO and increase web traffic. Trust our expertise in boosting online visibility.",
+    url: 'https://www.elegantthemes.com/blog/wp-content/uploads/2018/12/top11.png',
+    type: 'website',
     images: [
         {
-            url: 'https://www.elegantthemes.com/blog/wp-content/uploads/2018/12/top11.png'
+          url: 'https://www.elegantthemes.com/blog/wp-content/uploads/2018/12/top11.png'
         }
     ]
   },
