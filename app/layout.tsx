@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: [
         {
-            url: 'https://staging.d3ubmigrwmce70.amplifyapp.com/_next/static/media/logo-footer.c034fa71.svg'
+            url: 'https://www.elegantthemes.com/blog/wp-content/uploads/2018/12/top11.png'
         }
     ]
   },
